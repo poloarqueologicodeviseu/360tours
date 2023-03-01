@@ -1,0 +1,46 @@
+.info-hotspot .info-hotspot-close-wrapper {background-color: rgb(213, 26, 26);background-color: rgba(255, 82, 82, 0.5)!important;}
+.info-hotspot .info-hotspot-close-wrapper:hover {background-color: rgb(255, 82, 82);background-color: rgba(255, 82, 82,0.8)!important;}
+.info-hotspot .info-hotspot-header  {background-color: rgb(213, 26, 26);background-color: rgba(255, 82, 82, 0.5)!important;}
+.info-hotspot .info-hotspot-header:hover {background-color: rgb(255, 82, 82);background-color: rgba(255, 82, 82,0.8)!important;}
+.info-hotspot .info-hotspot-text {background-color: rgb(58,68,84, 0.3);}
+
+.info-hotspot-modal .info-hotspot-text {background-color: rgb(30,30,30);}
+.info-hotspot-modal .info-hotspot-header {background-color: rgb(213, 26, 26);background-color: rgba(255, 82, 82, 0.5)!important; text-transform: uppercase;}
+.info-hotspot-modal .info-hotspot-header:hover {background-color: rgb(255, 82, 82);background-color: rgba(255, 82, 82,0.8)!important; text-transform: uppercase;}
+.info-hotspot-modal .info-hotspot-close-wrapper {background-color: rgb(213, 26, 26);background-color: rgba(255, 82, 82, 0.5)!important;}
+.info-hotspot-modal .info-hotspot-close-wrapper:hover {background-color: rgb(255, 82, 82);background-color: rgba(255, 82, 82,0.8)!important;}
+
+
+.external_link{padding-left: 0.3em;padding-right: 0.3em; padding-top: 0.2em; padding-bottom: 0.2em;background-color: rgba(255, 82, 82,0.8) !important;}
+.external_link:hover {background-color: rgba(213, 26, 26,0.8) !important;}
+
+
+
+
+#toggleDeviceOrientation {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  background-color: rgb(103,115,131);
+  background-color: rgba(103,115,131,0.8);
+  display: none;
+}
+
+#toggleDeviceOrientation img {
+  width: 34px;
+  margin: 8px;
+}
+
+#toggleDeviceOrientation .disable {
+  display: none;
+}
+
+#toggleDeviceOrientation.enabled .disable {
+  display: block;
+}
+
+#toggleDeviceOrientation.enabled .enable {
+  display: none;
+}

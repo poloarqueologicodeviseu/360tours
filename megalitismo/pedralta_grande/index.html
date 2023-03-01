@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Anta Maior da Pedralta - PAV360 - Polo Arqueológico de Viseu António Almeida Henriques</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/jquery.modal.min.css" />
+<link rel="stylesheet" href="css/simple-lightbox.min.css" />
+<link rel="stylesheet" href="css/pav.css">
+<link rel="stylesheet" href="css/linkview.css">
+<link rel="stylesheet" href="css/linkhotspots.css">
+<link rel="stylesheet" href="css/infoboard.css">
+<link rel="stylesheet" href="css/infohotspots.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPYS60PG5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YMPYS60PG5');
+</script>
+</head>
+<body class="multiple-scenes ">
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+  <a href="javascript:void(0)" class="scene" data-id="0-r0011242"><li class="text">Vista aérea</li></a>
+  <a href="javascript:void(0)" class="scene" data-id="1-r0011247"><li class="text">Vista SO</li></a>
+  <a href="javascript:void(0)" class="scene" data-id="3-r0011254"><li class="text">Topo da Mamoa</li></a>
+  <a href="javascript:void(0)" class="scene" data-id="2-r0011253"><li class="text">Câmara</li></a>
+  </ul>
+</div>
+
+<div id="titleBar"><h1 class="sceneName"></h1></div>
+
+<div id="toggleDeviceOrientation"></div>
+<a href="javascript:void(0)" id="autorotateToggle"><img class="icon off" src="img/play.png"><img class="icon on" src="img/pause.png"></a>
+<a href="javascript:void(0)" id="fullscreenToggle"><img class="icon off" src="img/fullscreen.png"><img class="icon on" src="img/windowed.png"></a>
+<a href="javascript:void(0)" id="sceneListToggle"><img class="icon off" src="img/expand.png"><img class="icon on" src="img/collapse.png"></a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1"><img class="icon" src="img/up.png"></a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2"><img class="icon" src="img/down.png"></a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3"><img class="icon" src="img/left.png"></a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4"><img class="icon" src="img/right.png"></a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5"><img class="icon" src="img/plus.png"></a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6"><img class="icon" src="img/minus.png"></a>
+
+<div id="welcome-modal" class="modal">
+    <div class="modal_content_main hidemodal-small">
+        <div class="modal_content_50 modal_content_left welcome-logo"></div>
+        <div class="modal_content_50 modal_content_right">
+        <div class="welcome-right">
+          <h1 id="welcome-title">Anta Maior da Pedralta</h1>
+          <h2 id="welcome-title">Visita Virtual 360</h2>
+          <h3><a id="start-button" href="#" rel="modal:close">ENTRAR</a></h3>
+          <p><br /></p>
+          <h6 id="welcome-footer">CC-BY 2022 | PAVAAH</h6>
+        </div>
+        </div>
+    </div>
+    <div class="modal_content_main hidemodal-desktop">
+        <div class="welcome-right">
+        <img src="images/logo2.jpg" class="responsive-image">
+        <h1 id="welcome-title">Anta Maior da Pedralta</h1>
+        <h2 id="welcome-title" style="margin-top: -1em;">Visita Virtual 360</h2>
+          <h3><a id="start-button" href="#" rel="modal:close">ENTRAR</a></h3>
+          <p><br /></p>
+          <h6 id="welcome-footer">CC-BY 2022 | PAVAAH</h6>
+        </div>
+    </div>
+</div>
+
+<a href="#ficha-modal" class="modal_about modali" rel="modal:open"><img class="icon" src="img/info.png"></a>
+
+<div id="ficha-modal" class="modal">
+    <div class="modal_content_main hidemodal-small">
+        <div class="modal_content_70 modal_content_left">
+          <h1>Anta Maior da Pedralta</h1>
+          <p>Em 1912, José Coelho, terá descoberto este monumento e registado pinturas nos esteios da câmara. Esta descoberta viria a causar grande polémica, na sequência da remoção das pedras pintadas pelo arqueólogo Mendes Correia, que as fez deslocar para o Porto, sob protestos do arqueólogo viseense. Nesta visita terá acesso a imagens antigas e diferentes levantamentos da planta do monumento, assim como a uma galeria de modelos 3D de objetos recolhidos por José Coelho, durante a escavação do monumento. Poderá ainda aceder a bibliografia sobre este sítio arqueológico e a sua investigação, assim como à visita virtual da Antela de Pedralta.</p>
+          <ul class="lista-fix">
+          <li><span class="nome-creditos">CNS</span> 5077</li>
+          <li><span class="nome-creditos">Tipologia</span> Anta</li>
+          <li><span class="nome-creditos">Época</span> Neo-Calcolítico</li>
+          <li><span class="nome-creditos">Protecção</span></li>
+          <li><span class="nome-creditos">Bases de Dados</span> <a class="external-link" target="_blank" href="https://arqueologia.patrimoniocultural.pt/index.php?sid=sitios&subsid=55144">Endovélico</a></li>
+          <li><span class="nome-creditos">Descrição</span> Dólmen de corredor; câmara, provavelmente de nove esteios, atingindo 3 m de altura; corredor ortostático, diferenciado de câmara em planta e alçado, aberto a NE, cujas dimensões se desconhecem; actualmente conservam-se in situ apenas os elementos que constituem a cabeceira da câmara, com o esteio central fragmentado pela parte média, tombado para o interior; os restantes esteios, nomeadamente os que ladeariam a laje de cabeceira, deslocados e fragmentados, formam um amontoado de lajes que preenchem o espaço interior da câmara; tumulus, de planta subcircular, medindo actualmente, de eixos maior e menor, 20 m (O-E) e 19 m (N-S) e cerca de 1,80 m de altura; quando das escavações do princípio do século; atingiria cerca de 24 m de diâmetro e os esteios da câmara elevavam-se acima do tumulus entre 0,50 m e 0,60 m; quatro dos esteios da câmara tinham pinturas. Um apresenta pinturas ramiformes e outro uma pintura polícroma, talvez uma representação estílizada de um ídolo.</li>
+          </ul>
+          <h2>Localização</h2>
+          <ul  class="lista-fix">
+          <li><span class="nome-creditos">Freguesia</span> Cota</li>
+          <li><span class="nome-creditos">GPS</span> 40.785148, -7.827165</li>
+          <li><span class="nome-creditos">Acesso</span> À margem de um caminho carreteiro que conduz a Sanguinhedo. Ver no <a class="external-link" target="_blank" href="https://umap.openstreetmap.fr/en/map/megalitismo-em-viseu_546391#18/40.78565/-7.82713">Mapa</a>.</li>
+          </ul>
+          <h2>Trabalhos</h2>
+          <ul  class="lista-fix">
+          <li><span class="nome-creditos">2014</span> Prospeção (EIncA - Parque Eólico dos 3 Marcos e linha aérea a 15 kV e 60 kV, Moimenta da Beira/Viseu) - Sílvia Mónica Loureiro Mendes</li>
+          <li><span class="nome-creditos">1999</span> Prospeção (PNTA/98 - O Alto Paiva - Sociedade e Estratégias de Povoamento desde a Pré-História Recente à Alta Idade Média) - Domingos de Jesus da Cruz</li>
+          <li><span class="nome-creditos">1912</span> Escavação - José Coelho</li>
+          </ul>
+          <h2>Referências</h2>
+          <ul  class="lista-fix">
+          <li>CARDOSO, João Luís (2012) - <a class="external-link" target="_blank" href="https://www.researchgate.net/publication/305264316_A_defesa_do_Patrimonio_Arqueologico_em_confronto_na_segunda_decada_do_seculo_XX_o_caso_do_dolmen_de_Pedralta_Cota_Viseu">A Defesa do Património Arqueológico em Confronto na Segunda Década do Século XX: o caso do dólmen de Pedralta (Côta, Viseu)</a>. <i>Al-Madan</i>. IIª Série. 17, pp. 137-146.</li>
+          <li>CARVALHO, Pedro Sobral de (2013) - <i>José Coelho Coleção Arqueológica: A paixão pelo passado - Catálogo da Exposição</i>. Viseu: CM Viseu.</li>
+          <li>COELHO, José (1924) - <i>Policromia megalítica</i>. Estudos Préistóricos 2. Viseu: ed. do autor.</li>
+          <li>COELHO, José (1949) - <i>Notas Arqueológicas</i>. Viseu: ed. do autor.</li>
+          <li>CORRÊA, António A. Mendes (1924) - <a class="external-link" target="_blank" href="https://ler.letras.up.pt/uploads/ficheiros/artigo4092.pdf">Nótulas arqueológicas</a>. <i>Revista de Estudos Históricos</i>. Porto. 1. 1-2, pp. 65-70.</li>
+          <li>CORRÊA, António A. Mendes (1924) - <i>Os Povos Primitivos da Lusitânia</i>. Porto: Figueirinhas.</li>
+          <li>CORREIA, António. A. Mendes (1928) - A Lusitânia Pré-Romana". In PERES, Damião Peres, ed. - <i>História de Portugal</i>. Barcelos: Portucalense Editora.</li>
+          <li>CRUZ, Domingos J. (2001) - <i>O Alto Paiva. Megalitismo, Diversidade Tumular e Práticas Rituais durante a Pré-história Recente</i>. Coimbra: Faculdade de Letras da Universidade de Coimbra (dissertação de doutoramento, policopiada).</li>
+          <li>GIRÃO, Aristides de Amorim (1923-1924) - <a class="external-link" target="_blank" href="http://www.patrimoniocultural.gov.pt/static/data/publicacoes/o_arqueologo_portugues/serie_1/volume_26/282_monumentos_pre_historicos.pdf">Monumentos préhistóricos do Concelho de Viseu</a>. <i>O Arqueólogo Português</i>. Lisboa. Série I. 26, pp. 282–288.</li>
+          <li>LEISNER, Vera (1998) - <i>Die Megalithgräber der Ibeirichen Halbinsel. Der Western, Lieferung 4</i>. Berlin : De Gruyter.</li>
+          <li>PEDRO, Ivone dos Santos da Silva; VAZ, João Luis da Inês; ADOLFO, Jorge (1994) - <i><a  class="external-link" target="_blank" href="https://issuu.com/jorgeammarques2017/docs/jorge_adolfo_m._marques__roteiro_ar">Roteiro Arqueológico da Região de Turismo Dão Lafões</a></i>. Viseu: Região de Turismo Dão Lafões.</li>
+          <li>SANTOS, André; CRUZ, Domingos; BARBOSA, António (2012) - <a class="external-link" target="_blank" href="https://www.researchgate.net/publication/322665516_Gravuras_e_pinturas_em_dolmenes_O_Grupo_de_Viseu_de_E_Shee_1981_trinta_anos_depois">Gravuras e pinturas em dólmenes. O “Grupo de Viseu” de E. Shee (1981) trinta anos depois</a>. <i>Estudos Pré-Históricos</i>. Viseu. XVII, pp. 25–57.</li>
+          <li>SHEE, Elizabeth (1974) - Painted megalithic art in western Iberia. <i>Actas do III Congresso Nacional de Arqueologia</i>. Porto: Junta Nacional de Educação, pp. 105-123.</li>
+          <li>SHEE TWOHIG, Elizabeth. (1981) - <i>The Megalithic Art of Western Europe</i>. Oxford: Clarendon Press.</li>
+          <li>TAVARES, António Augusto (1979) - Expressão do megalitismo nas Beiras. <i>Beira Alta</i>. Viseu. 38:3, pp. 555–584.</li>
+          </ul>
+        </div>
+
+        <div class="modal_content_30 modal_content_right">
+          <h2 class="notopmargin">Ficha Técnica</h2>
+          <ul>
+          <li><h3>Projeto, Design e Implementação</h3></li>
+          <li>Polo Arqueológico de Viseu António Almeida Henriques</li>
+          </ul>
+          <ul class="lista-fix">
+            <li class="aviso">Os conteúdos da ficha tem como ponto de partida a informação disponibilizada na base de dados Endovélico do Portal do Arqueólogo, um serviço da DGPC (Direção-Geral do Património Cultural). Os dados vão sendo atualizados pelo PAVAAH a partir de outras fontes e de visitas aos locais. </li>
+          </ul>
+          <h2>Contactos</h2>
+          <ul>
+            <li>Casa do Miradouro</li>
+            <li>Largo António José Pereira</li>
+            <li>Viseu 3500-080 Portugal</li>
+            <li> &nbsp;</li>
+            <li><span class="material-icons">mail_outline</span> casadomiradouro@cmviseu.pt</li>
+            <li><span class="material-icons">phone</span> 232 425 388</li>
+          </ul>
+          <h2>Licença</h2>
+          <ul>
+            <li class="aviso"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este trabalho está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons - Atribuição  4.0 Internacional</a>.
+              <br>O conteúdo original deste website é da autoria do Polo Arqueológico de Viseu António Almeida Henriques.
+              <br>Todos os textos, imagens e outros conteúdos não originais foram incluídas para fins educacionais e de divulgação, não estão sujeitas à licença Creative Commons acima identificada.
+              </li>
+          </ul>
+        </div>
+    </div>
+    <div class="modal_content_main_small hidemodal-desktop">
+        <div class="modal_content_100">
+        <h1>Anta Maior da Pedralta</h1>
+        <p>Em 1912, José Coelho, terá descoberto este monumento e registado pinturas nos esteios da câmara. Esta descoberta viria a causar grande polémica, na sequência da remoção das pedras pintadas pelo arqueólogo Mendes Correia, que as fez deslocar para o Porto, sob protestos do arqueólogo viseense. Nesta visita terá acesso a imagens antigas e diferentes levantamentos da planta do monumento, assim como a uma galeria de modelos 3D de objetos recolhidos por José Coelho, durante a escavação do monumento. Poderá ainda aceder a bibliografia sobre este sítio arqueológico e a sua investigação, assim como à visita virtual da Antela de Pedralta.</p>
+        <ul class="lista-fix">
+        <li><span class="nome-creditos">CNS</span> 5077</li>
+        <li><span class="nome-creditos">Tipologia</span> Anta</li>
+        <li><span class="nome-creditos">Época</span> Neo-Calcolítico</li>
+        <li><span class="nome-creditos">Protecção</span></li>
+        <li><span class="nome-creditos">Bases de Dados</span> <a class="external-link" target="_blank" href="https://arqueologia.patrimoniocultural.pt/index.php?sid=sitios&subsid=55144">Endovélico</a></li>
+        <li><span class="nome-creditos">Descrição</span> Dólmen de corredor; câmara, provavelmente de nove esteios, atingindo 3 m de altura; corredor ortostático, diferenciado de câmara em planta e alçado, aberto a NE, cujas dimensões se desconhecem; actualmente conservam-se in situ apenas os elementos que constituem a cabeceira da câmara, com o esteio central fragmentado pela parte média, tombado para o interior; os restantes esteios, nomeadamente os que ladeariam a laje de cabeceira, deslocados e fragmentados, formam um amontoado de lajes que preenchem o espaço interior da câmara; tumulus, de planta subcircular, medindo actualmente, de eixos maior e menor, 20 m (O-E) e 19 m (N-S) e cerca de 1,80 m de altura; quando das escavações do princípio do século; atingiria cerca de 24 m de diâmetro e os esteios da câmara elevavam-se acima do tumulus entre 0,50 m e 0,60 m; quatro dos esteios da câmara tinham pinturas. Um apresenta pinturas ramiformes e outro uma pintura polícroma, talvez uma representação estílizada de um ídolo.</li>
+        </ul>
+        <h2>Localização</h2>
+        <ul  class="lista-fix">
+        <li><span class="nome-creditos">Freguesia</span> Cota</li>
+        <li><span class="nome-creditos">GPS</span> 40.785148, -7.827165</li>
+        <li><span class="nome-creditos">Acesso</span> À margem de um caminho carreteiro que conduz a Sanguinhedo. Ver no <a class="external-link" target="_blank" href="https://umap.openstreetmap.fr/en/map/megalitismo-em-viseu_546391#18/40.78565/-7.82713">Mapa</a>.</li>
+        </ul>
+        <h2>Trabalhos</h2>
+        <ul  class="lista-fix">
+        <li><span class="nome-creditos">2014</span> Prospeção (EIncA - Parque Eólico dos 3 Marcos e linha aérea a 15 kV e 60 kV, Moimenta da Beira/Viseu) - Sílvia Mónica Loureiro Mendes</li>
+        <li><span class="nome-creditos">1999</span> Prospeção (PNTA/98 - O Alto Paiva - Sociedade e Estratégias de Povoamento desde a Pré-História Recente à Alta Idade Média) - Domingos de Jesus da Cruz</li>
+        </ul>
+        <h2>Referências</h2>
+        <ul  class="lista-fix">
+        <li>CARDOSO, João Luís (2012) - <a class="external-link" target="_blank" href="https://www.researchgate.net/publication/305264316_A_defesa_do_Patrimonio_Arqueologico_em_confronto_na_segunda_decada_do_seculo_XX_o_caso_do_dolmen_de_Pedralta_Cota_Viseu">A Defesa do Património Arqueológico em Confronto na Segunda Década do Século XX: o caso do dólmen de Pedralta (Côta, Viseu)</a>. <i>Al-Madan</i>. IIª Série. 17, pp. 137-146.</li>
+        <li>CARVALHO, Pedro Sobral de (2013) - <i>José Coelho Coleção Arqueológica: A paixão pelo passado - Catálogo da Exposição</i>. Viseu: CM Viseu.</li>
+        <li>COELHO, José (1924) - <i>Policromia megalítica</i>. Estudos Préistóricos 2. Viseu: ed. do autor.</li>
+        <li>COELHO, José (1949) - <i>Notas Arqueológicas</i>. Viseu: ed. do autor.</li>
+        <li>CORRÊA, António A. Mendes (1924) - <a class="external-link" target="_blank" href="https://ler.letras.up.pt/uploads/ficheiros/artigo4092.pdf">Nótulas arqueológicas</a>. <i>Revista de Estudos Históricos</i>. Porto. 1. 1-2, pp. 65-70.</li>
+        <li>CORRÊA, António A. Mendes (1924) - <i>Os Povos Primitivos da Lusitânia</i>. Porto: Figueirinhas.</li>
+        <li>CORREIA, António. A. Mendes (1928) - A Lusitânia Pré-Romana". In PERES, Damião Peres, ed. - <i>História de Portugal</i>. Barcelos: Portucalense Editora.</li>
+        <li>CRUZ, Domingos J. (2001) - <i>O Alto Paiva. Megalitismo, Diversidade Tumular e Práticas Rituais durante a Pré-história Recente</i>. Coimbra: Faculdade de Letras da Universidade de Coimbra (dissertação de doutoramento, policopiada).</li>
+        <li>GIRÃO, Aristides de Amorim (1923-1924) - <a class="external-link" target="_blank" href="http://www.patrimoniocultural.gov.pt/static/data/publicacoes/o_arqueologo_portugues/serie_1/volume_26/282_monumentos_pre_historicos.pdf">Monumentos préhistóricos do Concelho de Viseu</a>. <i>O Arqueólogo Português</i>. Lisboa. Série I. 26, pp. 282–288.</li>
+        <li>LEISNER, Vera (1998) - <i>Die Megalithgräber der Ibeirichen Halbinsel. Der Western, Lieferung 4</i>. Berlin : De Gruyter.</li>
+        <li>PEDRO, Ivone dos Santos da Silva; VAZ, João Luis da Inês; ADOLFO, Jorge (1994) - <i><a  class="external-link" target="_blank" href="https://issuu.com/jorgeammarques2017/docs/jorge_adolfo_m._marques__roteiro_ar">Roteiro Arqueológico da Região de Turismo Dão Lafões</a></i>. Viseu: Região de Turismo Dão Lafões.</li>
+        <li>SANTOS, André; CRUZ, Domingos; BARBOSA, António (2012) - <a class="external-link" target="_blank" href="https://www.researchgate.net/publication/322665516_Gravuras_e_pinturas_em_dolmenes_O_Grupo_de_Viseu_de_E_Shee_1981_trinta_anos_depois">Gravuras e pinturas em dólmenes. O “Grupo de Viseu” de E. Shee (1981) trinta anos depois</a>. <i>Estudos Pré-Históricos</i>. Viseu. XVII, pp. 25–57.</li>
+        <li>SHEE, Elizabeth (1974) - Painted megalithic art in western Iberia. <i>Actas do III Congresso Nacional de Arqueologia</i>. Porto: Junta Nacional de Educação, pp. 105-123.</li>
+        <li>SHEE TWOHIG, Elizabeth. (1981) - <i>The Megalithic Art of Western Europe</i>. Oxford: Clarendon Press.</li>
+        <li>TAVARES, António Augusto (1979) - Expressão do megalitismo nas Beiras. <i>Beira Alta</i>. Viseu. 38:3, pp. 555–584.</li>
+        </ul>
+        </div>
+        <div class="modal_content_100">
+        <h2>Ficha Técnica</h2>
+        <ul>
+        <li><h3>Projeto, Design e Implementação</h3></li>
+        <li>Polo Arqueológico de Viseu António Almeida Henriques</li>
+        </ul>
+        <ul>
+          <li class="aviso">Os conteúdos da ficha tem como ponto de partida a informação disponibilizada na base de dados Endovélico do Portal do Arqueólogo, um serviço da DGPC (Direção-Geral do Património Cultural). Os dados vão sendo atualizados pelo PAVAAH a partir de outras fontes e de visitas aos locais. </li>
+        </ul>
+        <h2>Contactos</h2>
+        <ul>
+          <li>Casa do Miradouro</li>
+          <li>Largo António José Pereira</li>
+          <li>Viseu 3500-080 Portugal</li>
+          <li> &nbsp;</li>
+          <li><span class="material-icons">mail_outline</span> casadomiradouro@cmviseu.pt</li>
+          <li><span class="material-icons">phone</span> 232 425 388</li>
+        </ul>
+        <h2>Licença</h2>
+        <ul>
+          <li class="aviso"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este trabalho está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons - Atribuição  4.0 Internacional</a>.
+            <br>O conteúdo original deste website é da autoria do Polo Arqueológico de Viseu António Almeida Henriques.
+            <br>Todos os textos, imagens e outros conteúdos não originais foram incluídas para fins educacionais e de divulgação, não estão sujeitas à licença Creative Commons acima identificada.
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>
+
+<!-- mapa -->
+<a href="#mapa_mmpn" class="modal_map  modali" rel="modal:open"><img class="icon" src="img/map.svg"></a>
+
+<div id="mapa_mmpn" class="modal">
+  <div class="modal_content_main hidemodal-small">
+    <div class="modal_content_70 modal_content_left">
+      <h1><span class="modal_titulo">Mapa da Visita</span></h1>
+      <div id="mapa-fundo"><span style="position: absolute;bottom: 10px;font-size:0.6em;">Mapa baseado na imagem publicada em Leisner (1998).</span>
+      </div>
+    </div>
+  <div class="modal_content_30 modal_content_right" style="padding-left:5%;">
+    <div id="mapList">
+      <ul class="scenes">
+      <li class="text"><span> &nbsp;</span></li>
+      <li class="text"><span> &nbsp;</span></li>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-r0011242"><li class="text"><span>1 Vista aérea</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="1-r0011247"><li class="text"><span>2 Vista SO</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="3-r0011254"><li class="text"><span>3 Topo da Mamoa</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="2-r0011253"><li class="text"><span>4 Câmara</span></li></a>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="modal_content_main_small hidemodal-desktop">
+    <h1><span class="modal_titulo">Mapa da Visita</span></h1>
+    <img src="images/pedralta.svg" class="responsive-image">
+  <div id="mapList">
+    <ul class="scenes">
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-r0011242"><li class="text"><span>1 Vista aérea</span></li></a>
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="1-r0011247"><li class="text"><span>2 Vista SO</span></li></a>
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="3-r0011254"><li class="text"><span>3 Topo da Mamoa</span></li></a>
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="2-r0011253"><li class="text"><span>4 Câmara</span></li></a>
+    </ul>
+  </div>
+<p style="font-size:0.6em;"><br>Mapa baseado na imagem publicada em Leisner (1998).</p>
+</div>
+</div>
+
+
+<div id="plantas" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_70 modal_content_left">
+      <div class="gallery" style="background-image: url('images/planta_shee_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/planta_shee.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+        <div class="gallery" style="background-image: url('images/planta_leisner_thumb.jpg'); float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/planta_leisner.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/planta_cruz_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/planta_cruz.jpg" class=""><div class="empty-full"><span class="number-multiple-image">3</span></div></a>
+        </div>
+      </div>
+      <div class="modal_content_30 modal_content_right">
+      <h1><span class="modal_titulo">Plantas</span></h1>
+      <p><span class="nome-creditos">1</span> Planta publicada em SHEE TWOHIG, Elizabeth (1981)</span> - <i>The Megalithic Art of Western Europe</i>. Oxford: Clarendon Press.</p>
+      <p><span class="nome-creditos">2</span> Planta e alçado publicados em LEISNER, Vera (1998)</span> - <i>Die Megalithgräber der Ibeirichen Halbinsel. Der Western, Lieferung 4</i>. Berlin : De Gruyter.</p>
+      <p><span class="nome-creditos">3</span> Planta de Luís Filipe Coutinho Gomes e Pedro Manuel Sobral de Carvalho</span> publicada em CRUZ, Domingos J. (2001) - <i>O Alto Paiva. Megalitismo, Diversidade Tumular e Práticas Rituais durante a Pré-história Recente</i>. Coimbra: Faculdade de Letras da Universidade de Coimbra (dissertação de doutoramento, policopiada).</p>
+      </div>
+    </div>
+</div>
+
+
+<div id="galeria" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_60 modal_content_left">
+        <div class="gallery" style="background-image: url('images/pedralta_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/pedralta.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/pedralta2_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/pedralta2.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/pedralta3_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/pedralta3.jpg" class=""><div class="empty-full"><span class="number-multiple-image">3</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/foto_antiga_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/foto_antiga.jpg" class=""><div class="empty-full"><span class="number-multiple-image">4</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/foto1_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/foto1.jpg" class=""><div class="empty-full"><span class="number-multiple-image">5</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/foto2_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/foto2.jpg" class=""><div class="empty-full"><span class="number-multiple-image">6</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/foto3_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/foto3.jpg" class=""><div class="empty-full"><span class="number-multiple-image">7</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/foto4_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/foto4.jpg" class=""><div class="empty-full"><span class="number-multiple-image">8</span></div></a>
+        </div>
+      </div>
+      <div class="modal_content_40 modal_content_right">
+        <h1><span class="modal_titulo">Galeria</span></h1>
+        <p><span class="nome-creditos">1</span> Capa de COELHO, José (1924) - <i>Policromia megalítica</i>. Estudos Préistóricos 2. Viseu: ed. do autor.</p>
+        <p><span class="nome-creditos">2</span> Folheto de promoção da obra COELHO, José (1924) - <i>Policromia megalítica</i>. Estudos Préistóricos 2. Viseu: ed. do autor.</p>
+        <p><span class="nome-creditos">3</span> Capa de BREUIL, Henri (1912) - L’âge des cavernes et roches ornées de France et d’Espagne. <i>Revue archéologique</i>. t. XIX, pp. 192-234.</p>
+        <p><span class="nome-creditos">4</span> "A foto foi-nos of. em 3 de Outubro, 1922, pelo sac fotografado no 1º plano, nosso velho e bom amigo Sr. Dr. José Fructuoso da Costa, venerando e muito digno Vigário Geral do Bispado." - COELHO, José (1949) - <i>Notas Arqueológicas</i>. Viseu: ed. do autor.</p>
+        <p><span class="nome-creditos">5-8</span> Fotografias do PAVAAH.</p>
+      </div>
+    </div>
+</div>
+
+<div id="espolio" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_70 modal_content_left">
+        <div class="gallery" style="background-image: url('images/205_3d_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="https://sketchfab.com/3d-models/jc-79-205-b-fragmento-de-ceramica-613577bc7171469f9ea58a7f6c809070" target="_blank" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/vaso_3d_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="https://sketchfab.com/3d-models/jc-79-192-pote-ceramico-ceramic-pot-820300f0a9114ec5ba71a24a3f81b6fb" target="_blank" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/caixa_3d_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="https://sketchfab.com/3d-models/caixa-839a1ecc696745eabbcff4630dd5228c" target="_blank" class=""><div class="empty-full"><span class="number-multiple-image">3</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/foto5_thumb.jpg'); float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/foto5.jpg" class=""><div class="empty-full"><span class="number-multiple-image">4</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/caixa_ossos_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/caixa_ossos.jpg" class=""><div class="empty-full"><span class="number-multiple-image">5</span></div></a>
+        </div>
+      </div>
+      <div class="modal_content_30 modal_content_right">
+      <h1><span class="modal_titulo">Espólio</span></h1>
+      <p>Atualmente, não conhecemos a localização precisa onde estes achados foram encontrados mas sabemos que foram recolhidos durante a escavação dirigida por José Coelho em 1912.</p>
+      <p><span class="nome-creditos">1</span> Modelo 3D do PAVAAH (2021).</p>
+      <p><span class="nome-creditos">2</span> Modelo 3D do PAVAAH (2021).</p>
+      <p><span class="nome-creditos">3</span> Modelo 3D do PAVAAH (2021).</p>
+      <p><span class="nome-creditos">4</span> Fotografia do PAVAAH (2021).</p>
+      <p><span class="nome-creditos">5</span> Fotografia do PAVAAH (2021).</p>
+      </div>
+    </div>
+</div>
+
+<div id="ccinco" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_70 modal_content_left">
+      <div class="gallery" style="background-image: url('images/c5_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c5.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/c5_leisner_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c5_leisner.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+      </div>
+      <div class="modal_content_30 modal_content_right">
+      <h1><span class="modal_titulo">Esteio C5</span></h1>
+      <p><span class="nome-creditos">1</span> Desenho publicado em SHEE TWOHIG, Elizabeth (1981) - <i>The Megalithic Art of Western Europe</i>. Oxford: Clarendon Press.</p>
+      <p><span class="nome-creditos">2</span> Desenho publicado em LEISNER, Vera (1998) - <i>Die Megalithgräber der Ibeirichen Halbinsel. Der Western, Lieferung 4</i>. Berlin : De Gruyter.</p>
+      </div>
+    </div>
+</div>
+
+<div id="cquatro" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_70 modal_content_left">
+      <div class="gallery" style="background-image: url('images/c4_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c4.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/c4_leisner_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c4_leisner.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+
+      </div>
+      <div class="modal_content_30 modal_content_right">
+      <h1><span class="modal_titulo">Esteio C4</span></h1>
+      <p><span class="nome-creditos">1</span> Desenho publicado em SHEE TWOHIG, Elizabeth (1981) - <i>The Megalithic Art of Western Europe</i>. Oxford: Clarendon Press.</p>
+      <p><span class="nome-creditos">2</span> Desenho publicado em LEISNER, Vera (1998) - <i>Die Megalithgräber der Ibeirichen Halbinsel. Der Western, Lieferung 4</i>. Berlin : De Gruyter.</p>
+      </div>
+    </div>
+</div>
+
+<div id="cdois" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_70 modal_content_left">
+      <div class="gallery" style="background-image: url('images/c2_coelho_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c2_coelho.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/c2_correia_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c2_correia.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/c2_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c2.jpg" class=""><div class="empty-full"><span class="number-multiple-image">3</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/c2_leisner_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c2_leisner.jpg" class=""><div class="empty-full"><span class="number-multiple-image">4</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/c2_v2_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c2_v2.jpg" class=""><div class="empty-full"><span class="number-multiple-image">5</span></div></a>
+      </div>
+      </div>
+      <div class="modal_content_30 modal_content_right">
+      <h1><span class="modal_titulo">Esteio C2</span></h1>
+      <p><span class="nome-creditos">1</span> Desenho publicado em COELHO, José (1924) - <i>Policromia megalítica</i>. Estudos Préistóricos 2. Viseu: ed. do autor.</p>
+      <p><span class="nome-creditos">2</span> Desenho de CORREIA, António A. Mendes (1928) publicado em CARVALHO, Pedro Sobral de (2013) - <i>José Coelho Coleção Arqueológica: A paixão pelo passado - Catálogo da Exposição</i>. Viseu: CM Viseu.</p>
+      <p><span class="nome-creditos">3</span> Desenho publicado em SHEE TWOHIG, E. (1981) - <i>The Megalithic Art of Western Europe</i>. Oxford: Clarendon Press.</p>
+      <p><span class="nome-creditos">4</span> Desenho publicado em LEISNER, Vera (1998) - <i>Die Megalithgräber der Ibeirichen Halbinsel. Der Western, Lieferung 4</i>. Berlin : De Gruyter.</p>
+      <p><span class="nome-creditos">5</span> Desenho publicado em SANTOS, André; CRUZ, Domingos; BARBOSA, António (2012) - <a class="external-link" target="_blank" href="https://www.researchgate.net/publication/322665516_Gravuras_e_pinturas_em_dolmenes_O_Grupo_de_Viseu_de_E_Shee_1981_trinta_anos_depois">Gravuras e pinturas em dólmenes. O “Grupo de Viseu” de E. Shee (1981) trinta anos depois</a>. <i>Estudos Pré-Históricos</i>. Viseu. XVII, pp. 25–57.</p>
+      </div>
+    </div>
+</div>
+
+<div id="cum" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_70 modal_content_left">
+      <div class="gallery" style="background-image: url('images/c1_coelho_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c1_coelho.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/c1_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c1.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/c1_leisner_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c1_leisner.jpg" class=""><div class="empty-full"><span class="number-multiple-image">3</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/c1_v2_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c1_v2.jpg" class=""><div class="empty-full"><span class="number-multiple-image">4</span></div></a>
+      </div>
+      </div>
+      <div class="modal_content_30 modal_content_right">
+      <h1><span class="modal_titulo">Esteio C1</span></h1>
+      <p><span class="nome-creditos">1</span> Desenho de COELHO, José (1924) - <i>Policromia megalítica</i>. Estudos Préistóricos 2. Viseu: ed. do autor.</p>
+      <p><span class="nome-creditos">2</span> Desenho publicado em SHEE TWOHIG, E. (1981) - <i>The Megalithic Art of Western Europe</i>. Oxford: Clarendon Press.</p>
+      <p><span class="nome-creditos">3</span> Desenho publicado em LEISNER, V. (1998) - <i>Die Megalithgräber der Ibeirichen Halbinsel. Der Western, Lieferung 4</i>. Berlin : De Gruyter.</p>
+      <p><span class="nome-creditos">4</span> Desenho publicado em SANTOS, André; CRUZ, Domingos; BARBOSA, António (2012) - <a class="external-link" target="_blank" href="https://www.researchgate.net/publication/322665516_Gravuras_e_pinturas_em_dolmenes_O_Grupo_de_Viseu_de_E_Shee_1981_trinta_anos_depois">Gravuras e pinturas em dólmenes. O “Grupo de Viseu” de E. Shee (1981) trinta anos depois</a>. <i>Estudos Pré-Históricos</i>. Viseu. XVII, pp. 25–57.</p>
+      </div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+<script src="vendor/DeviceOrientationControlMethod.js"></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+<script src="js/jquery.modal.min.js"></script>
+<script src="js/simple-lightbox.min.js"></script>
+
+<script src="init.js"></script>
+
+<script>
+(function() {
+		var $gallery = new SimpleLightbox('.gallery a', {
+      nav: false,
+      captions: true,
+      showCounter: false,
+      animationSpeed: 100
+      });
+    	})();
+</script>
+
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#welcome-modal').modal();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Anta de Mamaltar de Vale de Fachas 1 - PAV360 - Polo Arqueológico de Viseu António Almeida Henriques</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/jquery.modal.min.css" />
+<link rel="stylesheet" href="css/simple-lightbox.min.css" />
+<link rel="stylesheet" href="css/pav.css">
+<link rel="stylesheet" href="css/linkview.css">
+<link rel="stylesheet" href="css/linkhotspots.css">
+<link rel="stylesheet" href="css/infoboard.css">
+<link rel="stylesheet" href="css/infohotspots.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPYS60PG5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YMPYS60PG5');
+</script>
+</head>
+<body class="multiple-scenes ">
+<div id="pano"></div>
+
+<div id="sceneList">
+<ul class="scenes">
+    <a href="javascript:void(0)" class="scene" data-id="0-001"><li class="text">Vista aérea</li></a>
+    <a href="javascript:void(0)" class="scene" data-id="0-r0011161"><li class="text">Vista Oeste</li></a>
+    <a href="javascript:void(0)" class="scene" data-id="1-r0011170"><li class="text">Vista Norte</li></a>
+    <a href="javascript:void(0)" class="scene" data-id="2-r0011148"><li class="text">Topo da Mamoa (Sul)</li></a>
+    <a href="javascript:void(0)" class="scene" data-id="3-r0011151"><li class="text">Entrada</li></a>
+    <a href="javascript:void(0)" class="scene" data-id="4-r0011152"><li class="text">Topo da Mamoa (Norte)</li></a>
+    <a href="javascript:void(0)" class="scene" data-id="5-r0011155"><li class="text">Câmara</li></a>
+    <a href="javascript:void(0)" class="scene" data-id="6-r0011156"><li class="text">Corredor 1</li></a>
+    <a href="javascript:void(0)" class="scene" data-id="7-r0011160"><li class="text">Corredor 2</li></a>
+</ul>
+</div>
+
+<div id="titleBar"><h1 class="sceneName"></h1></div>
+<div id="toggleDeviceOrientation"></div>
+<a href="javascript:void(0)" id="autorotateToggle"><img class="icon off" src="img/play.png"><img class="icon on" src="img/pause.png"></a>
+<a href="javascript:void(0)" id="fullscreenToggle"><img class="icon off" src="img/fullscreen.png"><img class="icon on" src="img/windowed.png"></a>
+<a href="javascript:void(0)" id="sceneListToggle"><img class="icon off" src="img/expand.png"><img class="icon on" src="img/collapse.png"></a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1"><img class="icon" src="img/up.png"></a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2"><img class="icon" src="img/down.png"></a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3"><img class="icon" src="img/left.png"></a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4"><img class="icon" src="img/right.png"></a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5"><img class="icon" src="img/plus.png"></a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6"><img class="icon" src="img/minus.png"></a>
+
+
+<div id="welcome-modal" class="modal">
+    <div class="modal_content_main hidemodal-small">
+        <div class="modal_content_50 modal_content_left welcome-logo"></div>
+        <div class="modal_content_50 modal_content_right">
+        <div class="welcome-right">
+          <h1 id="welcome-title">Mamaltar de Vale de Fachas 1</h1>
+          <h2 id="welcome-title">Visita Virtual 360</h2>
+          <h3><a id="start-button" href="#" rel="modal:close">ENTRAR</a></h3>
+          <p><br /></p>
+          <h6 id="welcome-footer">CC-BY 2022 | PAVAAH</h6>
+        </div>
+        </div>
+    </div>
+    <div class="modal_content_main hidemodal-desktop">
+        <div class="welcome-right">
+        <img src="images/logo2.jpg" class="responsive-image">
+        <h1 id="welcome-title">Mamaltar de Vale de Fachas 1</h1>
+        <h2 id="welcome-title" style="margin-top: -1em;">Visita Virtual 360</h2>
+          <h3><a id="start-button" href="#" rel="modal:close">ENTRAR</a></h3>
+          <p><br /></p>
+          <h6 id="welcome-footer">CC-BY 2022 | PAVAAH</h6>
+        </div>
+    </div>
+</div>
+
+<a href="#ficha-modal" class="modal_about modali" rel="modal:open"><img class="icon" src="img/info.png"></a>
+
+<div id="ficha-modal" class="modal">
+    <div class="modal_content_main hidemodal-small">
+        <div class="modal_content_70 modal_content_left">
+          <h1>Anta de Mamaltar de Vale de Fachas 1</h1>
+          <p>Este monumento foi descoberto e escavado por José Coelho em 1911 e trata-se da única construção megalítica do Concelho classificada como Monumento Nacional. Conserva ainda parte significativa da mamoa. Na câmara e no corredor poderá visualizar modelos 3D de parte dos objetos recolhidos na escavação, a partir dos locais em que foram encontrados pelo arqueólogo viseense. Terá ainda acesso a imagens antigas e diferentes levantamentos da planta do monumento, assim como aos registos das pinturas identificadas. Poderá também aceder a bibliografia sobre este sítio arqueológico e a sua investigação, assim como à visita virtual de Mamaltar de Vale de Fachas 2.</p>
+          <ul class="lista-fix">
+          <li><span class="nome-creditos">CNS</span> 5889</li>
+          <li><span class="nome-creditos">Tipologia</span> Anta</li>
+          <li><span class="nome-creditos">Época</span> Neolítico</li>
+          <li><span class="nome-creditos">Protecção</span> Monumento Nacional - <a class="external-link" target="_blank" href="http://www.patrimoniocultural.gov.pt/media/uploads/decsmaria/Decreto23_06_1910.pdf">Decreto de 16-06-1910, DG, n.º 136, de 23-06-1910</a> (classificou a Anta de Mamaltar, então localizada no concelho de Albergaria-a-Velha); <a class="external-link" target="_blank" href="https://files.dre.pt/1s/1993/11/280b00/66986702.pdf">Decreto n.º 45/93, DR, I Série-B, n.º 280, de 30-11-1993</a> (a classificação passou a ter a seguinte redacção: Anta de Mamaltar de Vale de Fachas)</li>
+          <li><span class="nome-creditos">Bases de Dados</span> <a class="external-link" target="_blank" href="http://arqueologia.patrimoniocultural.pt/index.php?sid=sitios&amp;subsid=54265">Endovélico</a>, <a class="external-link" target="_blank" href="http://www.monumentos.gov.pt/site/app_pagesuser/SIPA.aspx?id=3672">SIPA</a> e <a class="external-link" target="_blank" href="http://www.patrimoniocultural.gov.pt/pt/patrimonio/patrimonio-imovel/pesquisa-do-patrimonio/classificado-ou-em-vias-de-classificacao/geral/view/69768">Ulysses</a></li>
+          <li><span class="nome-creditos">Descrição</span> Monumento com câmara poligonal alargada e corredor longo, com orientação a SE. Os esteios da câmara encontram-se sobrepostos e inclinados para o interior. Dois deles têm vestígios de pintura. O corredor tem de comprimento 6,45m e é mais largo na entrada da câmara, afunilando à medida que se aproxima do exterior. No lado sul são visíveis dez esteios, estando dois deles tombados. No lado norte são visíveis apenas nove esteios.</li>
+          </ul>
+          <h2>Localização</h2>
+          <ul  class="lista-fix">
+          <li><span class="nome-creditos">Freguesia</span> Rio de Loba</li>
+          <li><span class="nome-creditos">GPS</span> 40.679559, -7.85054</li>
+          <li><span class="nome-creditos">Acesso</span> EN 229 - Viseu - Sátão a 5Km a NE de Viseu, no lugar de Vale de Fachas, em caminho rural de difícil acesso, a cerca de 50m à esquerda, antes do caminho rural que divide a freguesia de Mundão. Ver no <a class="external-link" target="_blank" href="https://umap.openstreetmap.fr/en/map/megalitismo-em-viseu_546391#18/40.68008/-7.85028">Mapa</a>.</li>
+          </ul>
+          <h2>Trabalhos</h2>
+          <ul  class="lista-fix">
+          <li><span class="nome-creditos">2008</span> Relocalização/Identificação (Relocalização, identificação e inspecção de Sítios pela Extensão do IPA - Viseu) - Maria Gertrudes Azinheira Branco</li>
+          <li><span class="nome-creditos">1990</span> Manutenção, proteção, conservação e restauro (Trabalhos Arqueológicos na Anta de Mamaltar de Vale de Fachas - Viseu) - Ivone dos Santos da Silva Pedro e João Luís da Inês Vaz</li>
+          <li><span class="nome-creditos">1912</span> Escavação - José Coelho</li>
+          </ul>
+          <h2>Referências</h2>
+          <ul  class="lista-fix">
+          <li>CARVALHO, Pedro Sobral de (2013) - <i>José Coelho Coleção Arqueológica: A paixão pelo passado - Catálogo da Exposição</i>. Viseu: CM Viseu.</li>
+          <li>COELHO, José (1912) - <i>A préistoria e o seu ensino: Mamaltar do vale de Fachas</i>. Estudos Préistóricos. Viseu: ed. do autor.</li>
+          <li>COELHO José (09.02.1930) - <i>Cadernos de Notas Arqueológicas</i>. nº5, Folha 39.</li>
+          <li>COELHO José (03.05.1930)- <i>Cadernos de Notas Arqueológicas</i>. nº6, Folha 7. </li>
+          <li>COELHO, José (1931) - Polychromie mégalithique dans la Beira Alta. <i>XVe Congrès International d’Anthropologie & d’Archéologie Préhistorique</i>. Paris: Librairie E. Nourry, pp. 362-368.</li>
+          <li>COELHO, José (1947) - Notas arqueológicas (4a série). <i>Beira Alta</i>. Viseu. 6:3-4, pp. 201-206.</li>
+          <li>GIRÃO, Aristides de Amorim (1921-1922) - <a class="external-link" target="_blank" href="http://www.patrimoniocultural.gov.pt/static/data/publicacoes/o_arqueologo_portugues/serie_1/volume_25/183_monumentos_viseu.pdf">Monumentos pre-históricos do concelho de Viseu</a>. <i>O Arqueólogo Português</i>. Lisboa. Série I. 25, pp. 183–189.</li>
+          <li>GOMES, Luís Filipe Coutinho; CARVALHO, Pedro Sobral de (1995) - Anta de Mamaltar do Vale de Fachas (Rio de Loba, Viseu). <i>Estudos Pré-Históricos</i>. Viseu. 3, pp. 229-241.</li>
+          <li>LEISNER, Georg; LEISNER, Vera (1956) - <i>Die Megalithgräber der Ibeirichen Halbinsel. Der Western, Lieferung 1</i>. Berlin : De Gruyter.</li>
+          <li>LEISNER, Vera (1998) - <i>Die Megalithgräber der Ibeirichen Halbinsel. Der Western, Lieferung 4</i>. Berlin : De Gruyter.</li>
+          <li>MOITA, Irisalva Nóbrega (1966) - Características predominantes do grupo dolménico da Beira Alta. <i>Ethnos</i>. 5, pp. 189–277.</li>
+          <li>PEDRO, Ivone dos Santos da Silva; VAZ, João Luis da Inês; ADOLFO, Jorge (1994) - <i><a  class="external-link" target="_blank" href="https://issuu.com/jorgeammarques2017/docs/jorge_adolfo_m._marques__roteiro_ar">Roteiro Arqueológico da Região de Turismo Dão Lafões</a></i>. Viseu: Região de Turismo Dão Lafões.</li>
+          <li>SANTOS, André; CRUZ, Domingos; BARBOSA, António (2012) - <a class="external-link" target="_blank" href="https://www.researchgate.net/publication/322665516_Gravuras_e_pinturas_em_dolmenes_O_Grupo_de_Viseu_de_E_Shee_1981_trinta_anos_depois">Gravuras e pinturas em dólmenes. O “Grupo de Viseu” de E. Shee (1981) trinta anos depois</a>. <i>Estudos Pré-Históricos</i>. Viseu. XVII, pp. 25–57.</li>
+          <li>SHEE, Elizabeth (1974) - Painted megalithic art in western Iberia. <i>Actas do III Congresso Nacional de Arqueologia</i>. Porto: Junta Nacional de Educação, pp. 105-123.</li>
+          <li>SHEE TWOHIG, Elizabeth (1981) - <i>The Megalithic Art of Western Europe</i>. Oxford: Clarendon Press.</li>
+          <li>TAVARES, António Augusto (1979) - Expressão do megalitismo nas Beiras. <i>Beira Alta</i>. Viseu. 38:3, pp. 555–584.</li>
+          </ul>
+        </div>
+
+        <div class="modal_content_30 modal_content_right">
+          <h2 class="notopmargin">Ficha Técnica</h2>
+          <ul>
+          <li><h3>Projeto, Design e Implementação</h3></li>
+          <li>Polo Arqueológico de Viseu António Almeida Henriques</li>
+          </ul>
+          <ul class="lista-fix">
+            <li class="aviso">Os conteúdos da ficha tem como ponto de partida a informação disponibilizada na base de dados Endovélico do Portal do Arqueólogo, um serviço da DGPC (Direção-Geral do Património Cultural). Os dados vão sendo atualizados pelo PAVAAH a partir de outras fontes e de visitas aos locais. </li>
+          </ul>
+          <h2>Contactos</h2>
+          <ul>
+            <li>Casa do Miradouro</li>
+            <li>Largo António José Pereira</li>
+            <li>Viseu 3500-080 Portugal</li>
+            <li> &nbsp;</li>
+            <li><span class="material-icons">mail_outline</span> casadomiradouro@cmviseu.pt</li>
+            <li><span class="material-icons">phone</span> 232 425 388</li>
+          </ul>
+          <h2>Licença</h2>
+          <ul>
+            <li class="aviso"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este trabalho está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons - Atribuição  4.0 Internacional</a>.
+              <br>O conteúdo original deste website é da autoria do Polo Arqueológico de Viseu António Almeida Henriques.
+              <br>Todos os textos, imagens e outros conteúdos não originais foram incluídas para fins educacionais e de divulgação, não estão sujeitas à licença Creative Commons acima identificada.
+              </li>
+          </ul>
+        </div>
+    </div>
+    <div class="modal_content_main_small hidemodal-desktop">
+        <div class="modal_content_100">
+        <h1>Anta de Mamaltar de Vale de Fachas 1</h1>
+        <p>Este monumento foi descoberto e escavado por José Coelho em 1911 e trata-se da única construção megalítica do Concelho classificada como Monumento Nacional. Conserva ainda parte significativa da mamoa. Na câmara e no corredor poderá visualizar modelos 3D de parte dos objetos recolhidos na escavação, a partir dos locais em que foram encontrados pelo arqueólogo viseense. Terá ainda acesso a imagens antigas e diferentes levantamentos da planta do monumento, assim como aos registos das pinturas identificadas. Poderá também aceder a bibliografia sobre este sítio arqueológico e a sua investigação, assim como à visita virtual de Mamaltar de Vale de Fachas 2.</p>
+        <ul class="lista-fix">
+        <li><span class="nome-creditos">CNS</span> 5889</li>
+        <li><span class="nome-creditos">Tipologia</span> Anta</li>
+        <li><span class="nome-creditos">Época</span> Neolítico</li>
+        <li><span class="nome-creditos">Protecção</span> Monumento Nacional - <a class="external-link" target="_blank" href="http://www.patrimoniocultural.gov.pt/media/uploads/decsmaria/Decreto23_06_1910.pdf">Decreto de 16-06-1910, DG, n.º 136, de 23-06-1910</a> (classificou a Anta de Mamaltar, então localizada no concelho de Albergaria-a-Velha); <a class="external-link" target="_blank" href="https://files.dre.pt/1s/1993/11/280b00/66986702.pdf">Decreto n.º 45/93, DR, I Série-B, n.º 280, de 30-11-1993</a> (a classificação passou a ter a seguinte redacção: Anta de Mamaltar de Vale de Fachas)</li>
+        <li><span class="nome-creditos">Bases de Dados</span> <a class="external-link" target="_blank" href="http://arqueologia.patrimoniocultural.pt/index.php?sid=sitios&amp;subsid=54265">Endovélico</a>, <a class="external-link" target="_blank" href="http://www.monumentos.gov.pt/site/app_pagesuser/SIPA.aspx?id=3672">SIPA</a> e <a class="external-link" target="_blank" href="http://www.patrimoniocultural.gov.pt/pt/patrimonio/patrimonio-imovel/pesquisa-do-patrimonio/classificado-ou-em-vias-de-classificacao/geral/view/69768">Ulysses</a></li>
+        <li><span class="nome-creditos">Descrição</span> Monumento com câmara poligonal alargada e corredor longo, com orientação a SE. Os esteios da câmara encontram-se sobrepostos e inclinados para o interior. Dois deles têm vestígios de pintura. O corredor tem de comprimento 6,45m e é mais largo na entrada da câmara, afunilando à medida que se aproxima do exterior. No lado sul são visíveis dez esteios, estando dois deles tombados. No lado norte são visíveis apenas nove esteios.</li>
+        </ul>
+        <h2>Localização</h2>
+        <ul  class="lista-fix">
+        <li><span class="nome-creditos">Freguesia</span> Rio de Loba</li>
+        <li><span class="nome-creditos">GPS</span> 40.679559, -7.85054</li>
+        <li><span class="nome-creditos">Acesso</span> EN 229 - Viseu - Sátão a 5Km a NE de Viseu, no lugar de Vale de Fachas, em caminho rural de difícil acesso, a cerca de 50m à esquerda, antes do caminho rural que divide a freguesia de Mundão. Ver no <a class="external-link" target="_blank" href="https://umap.openstreetmap.fr/en/map/megalitismo-em-viseu_546391#18/40.68008/-7.85028">Mapa</a>.</li>
+        </ul>
+        <h2>Trabalhos</h2>
+        <ul  class="lista-fix">
+        <li><span class="nome-creditos">2008</span> Relocalização/Identificação (Relocalização, identificação e inspecção de Sítios pela Extensão do IPA - Viseu) - Maria Gertrudes Azinheira Branco</li>
+        <li><span class="nome-creditos">1990</span> Manutenção, proteção, conservação e restauro (Trabalhos Arqueológicos na Anta de Mamaltar de Vale de Fachas - Viseu) - Ivone dos Santos da Silva Pedro e João Luís da Inês Vaz</li>
+        <li><span class="nome-creditos">1912</span> Escavação - José Coelho</li>
+        </ul>
+        <h2>Referências</h2>
+        <ul  class="lista-fix">
+        <li>CARVALHO, Pedro Sobral de (2013) - <i>José Coelho Coleção Arqueológica: A paixão pelo passado - Catálogo da Exposição</i>. Viseu: CM Viseu.</li>
+        <li>COELHO, José (1912) - <i>A préistoria e o seu ensino: Mamaltar do vale de Fachas</i>. Estudos Préistóricos. Viseu: ed. do autor.</li>
+        <li>COELHO José (09.02.1930) - <i>Cadernos de Notas Arqueológicas</i>. nº5, Folha 39.</li>
+        <li>COELHO José (03.05.1930)- <i>Cadernos de Notas Arqueológicas</i>. nº6, Folha 7. </li>
+        <li>COELHO, José (1931) - Polychromie mégalithique dans la Beira Alta. <i>XVe Congrès International d’Anthropologie & d’Archéologie Préhistorique</i>. Paris: Librairie E. Nourry, pp. 362-368.</li>
+        <li>COELHO, José (1947) - Notas arqueológicas (4a série). <i>Beira Alta</i>. Viseu. 6:3-4, pp. 201-206.</li>
+        <li>GIRÃO, Aristides de Amorim (1921-1922) - <a class="external-link" target="_blank" href="http://www.patrimoniocultural.gov.pt/static/data/publicacoes/o_arqueologo_portugues/serie_1/volume_25/183_monumentos_viseu.pdf">Monumentos pre-históricos do concelho de Viseu</a>. <i>O Arqueólogo Português</i>. Lisboa. Série I. 25, pp. 183–189.</li>
+        <li>GOMES, Luís Filipe Coutinho; CARVALHO, Pedro Sobral de (1995) - Anta de Mamaltar do Vale de Fachas (Rio de Loba, Viseu). <i>Estudos Pré-Históricos</i>. Viseu. 3, pp. 229-241.</li>
+        <li>LEISNER, Georg; LEISNER, Vera (1956) - <i>Die Megalithgräber der Ibeirichen Halbinsel. Der Western, Lieferung 1</i>. Berlin : De Gruyter.</li>
+        <li>LEISNER, Vera (1998) - <i>Die Megalithgräber der Ibeirichen Halbinsel. Der Western, Lieferung 4</i>. Berlin : De Gruyter.</li>
+        <li>MOITA, Irisalva Nóbrega (1966) - Características predominantes do grupo dolménico da Beira Alta. <i>Ethnos</i>. 5, pp. 189–277.</li>
+        <li>PEDRO, Ivone dos Santos da Silva; VAZ, João Luis da Inês; ADOLFO, Jorge (1994) - <i><a  class="external-link" target="_blank" href="https://issuu.com/jorgeammarques2017/docs/jorge_adolfo_m._marques__roteiro_ar">Roteiro Arqueológico da Região de Turismo Dão Lafões</a></i>. Viseu: Região de Turismo Dão Lafões.</li>
+        <li>SANTOS, André; CRUZ, Domingos; BARBOSA, António (2012) - <a class="external-link" target="_blank" href="https://www.researchgate.net/publication/322665516_Gravuras_e_pinturas_em_dolmenes_O_Grupo_de_Viseu_de_E_Shee_1981_trinta_anos_depois">Gravuras e pinturas em dólmenes. O “Grupo de Viseu” de E. Shee (1981) trinta anos depois</a>. <i>Estudos Pré-Históricos</i>. Viseu. XVII, pp. 25–57.</li>
+        <li>SHEE, Elizabeth (1974) - Painted megalithic art in western Iberia. <i>Actas do III Congresso Nacional de Arqueologia</i>. Porto: Junta Nacional de Educação, pp. 105-123.</li>
+        <li>SHEE TWOHIG, Elizabeth (1981) - <i>The Megalithic Art of Western Europe</i>. Oxford: Clarendon Press.</li>
+        <li>TAVARES, António Augusto (1979) - Expressão do megalitismo nas Beiras. <i>Beira Alta</i>. Viseu. 38:3, pp. 555–584.</li>
+        </ul>
+      </div>
+        <div class="modal_content_100">
+        <h2>Ficha Técnica</h2>
+        <ul>
+        <li><h3>Projeto, Design e Implementação</h3></li>
+        <li>Polo Arqueológico de Viseu António Almeida Henriques</li>
+        </ul>
+        <ul>
+          <li class="aviso">Os conteúdos da ficha tem como ponto de partida a informação disponibilizada na base de dados Endovélico do Portal do Arqueólogo, um serviço da DGPC (Direção-Geral do Património Cultural). Os dados vão sendo atualizados pelo PAVAAH a partir de outras fontes e de visitas aos locais. </li>
+        </ul>
+        <h2>Contactos</h2>
+        <ul>
+          <li>Casa do Miradouro</li>
+          <li>Largo António José Pereira</li>
+          <li>Viseu 3500-080 Portugal</li>
+          <li> &nbsp;</li>
+          <li><span class="material-icons">mail_outline</span> casadomiradouro@cmviseu.pt</li>
+          <li><span class="material-icons">phone</span> 232 425 388</li>
+        </ul>
+        <h2>Licença</h2>
+        <ul>
+          <li class="aviso"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este trabalho está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons - Atribuição  4.0 Internacional</a>.
+            <br>O conteúdo original deste website é da autoria do Polo Arqueológico de Viseu António Almeida Henriques.
+            <br>Todos os textos, imagens e outros conteúdos não originais foram incluídas para fins educacionais e de divulgação, não estão sujeitas à licença Creative Commons acima identificada.
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>
+
+<!-- mapa -->
+<a href="#mapa_mmpn" class="modal_map  modali" rel="modal:open"><img class="icon" src="img/map.svg"></a>
+
+<div id="mapa_mmpn" class="modal">
+  <div class="modal_content_main hidemodal-small">
+    <div class="modal_content_70 modal_content_left">
+      <h1><span class="modal_titulo">Mapa da Visita</span></h1>
+      <div id="mapa-fundo"><span style="position: absolute;bottom: 10px;font-size:0.6em;">Mapa baseado na imagem publicada em Gomes & Carvalho (1995).</span>
+      </div>
+    </div>
+  <div class="modal_content_30 modal_content_right" style="padding-left:5%;">
+    <div id="mapList">
+      <ul class="scenes">
+      <li class="text"><span> &nbsp;</span></li>
+      <li class="text"><span> &nbsp;</span></li>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-001"><li class="text"><span>1 Vista aérea</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-r0011161"><li class="text"><span>2 Vista Oeste</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="1-r0011170"><li class="text"><span>3 Vista Norte</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="2-r0011148"><li class="text"><span>4 Topo da Mamoa (Sul)</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="3-r0011151"><li class="text"><span>5 Entrada</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="4-r0011152"><li class="text"><span>6 Topo da Mamoa (Norte)</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="5-r0011155"><li class="text"><span>7 Câmara</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="6-r0011156"><li class="text"><span>8 Corredor 1</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="7-r0011160"><li class="text"><span>9 Corredor 2</span></li></a>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="modal_content_main_small hidemodal-desktop">
+    <h1><span class="modal_titulo">Mapa da Visita</span></h1>
+    <img src="images/mamaltar.svg" class="responsive-image">
+  <div id="mapList">
+    <ul class="scenes">
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-001"><li class="text"><span>1 Vista aérea</span></li></a>
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-r0011161"><li class="text"><span>2 Vista Oeste</span></li></a>
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="1-r0011170"><li class="text"><span>3 Vista Norte</span></li></a>
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="2-r0011148"><li class="text"><span>4 Topo da Mamoa (Sul)</span></li></a>
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="3-r0011151"><li class="text"><span>5 Entrada</span></li></a>
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="4-r0011152"><li class="text"><span>6 Topo da Mamoa (Norte)</span></li></a>
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="5-r0011155"><li class="text"><span>7 Câmara</span></li></a>
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="6-r0011156"><li class="text"><span>8 Corredor 1</span></li></a>
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="7-r0011160"><li class="text"><span>9 Corredor 2</span></li></a>
+    </ul>
+  </div>
+  <p style="font-size:0.6em;"><br>Mapa baseado na imagem publicada em Gomes & Carvalho (1995).</p>
+</div>
+</div>
+
+<div id="mapas" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_70 modal_content_left">
+      <div class="gallery" style="background-image: url('images/mamaltar_coelho_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/mamaltar_coelho.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/mamaltar_girao_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/mamaltar_girao.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/mamaltar_leisner_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/mamaltar_leisner.jpg" class=""><div class="empty-full"><span class="number-multiple-image">3</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/mamaltar_shee_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/mamaltar_shee.jpg" class=""><div class="empty-full"><span class="number-multiple-image">4</span></div></a>
+      </div>
+        <div class="gallery" style="background-image: url('images/mamaltar1thumb.jpg'); float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/mamaltar1.jpg" class=""><div class="empty-full"><span class="number-multiple-image">5</span></div></a>
+        </div>
+      </div>
+      <div class="modal_content_30 modal_content_right">
+      <h1><span class="modal_titulo">Plantas</span></h1>
+      <p><span class="nome-creditos">1</span> Planta publicada em COELHO, José (1912) - <i>A préistoria e o seu ensino: Mamaltar do vale de Fachas</i>. Estudos Préistóricos. Viseu: ed. do autor.</p>
+      <p><span class="nome-creditos">2</span> Planta de Amorim Girão (1921,1922) publicada em GOMES & CARVALHO. Op cit.</p>
+      <p><span class="nome-creditos">3</span> Planta e corte de Georg e Vera Leisner (1956) publicada em GOMES & CARVALHO. Op cit.</p>
+      <p><span class="nome-creditos">4</span> Planta publicada em SHEE TWOHIG, Elizabeth (1981) - <i>The Megalithic Art of Western Europe</i>. Oxford: Clarendon Press.</p>
+      <p><span class="nome-creditos">5</span> Planta publicada em GOMES, Luís Filipe Coutinho; CARVALHO, Pedro Sobral de (1995) - Anta de Mamaltar do Vale de Fachas (Rio de Loba, Viseu). <i>Estudos Pré-Históricos</i>. III, pp. 229-241.</p>
+      </div>
+    </div>
+</div>
+
+<div id="galeria" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_70 modal_content_left">
+      <div class="gallery" style="background-image: url('images/foto1_thumb.jpg');  float:left;width: 30%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/foto1.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/foto2_thumb.jpg');  float:left;width: 30%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/foto2.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/foto3_thumb.jpg');  float:left;width: 30%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/foto3.jpg" class=""><div class="empty-full"><span class="number-multiple-image">3</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/foto4_thumb.jpg');  float:left;width: 30%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/foto4.jpg" class=""><div class="empty-full"><span class="number-multiple-image">4</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/foto5_thumb.jpg');  float:left;width: 30%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/foto5.jpg" class=""><div class="empty-full"><span class="number-multiple-image">5</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/foto6_thumb.jpg');  float:left;width: 30%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/foto6.jpg" class=""><div class="empty-full"><span class="number-multiple-image">6</span></div></a>
+      </div>
+      </div>
+      <div class="modal_content_30 modal_content_right">
+      <h1><span class="modal_titulo">Galeria</span></h1>
+      <p><span class="nome-creditos">1-6</span> Fotografias do PAVAAH.</p>
+      </div>
+    </div>
+</div>
+
+
+
+<div id="placa" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_50 modal_content_left">
+      <div class="gallery" style="background-image: url('images/placa_coelho_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/placa_coelho.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/placa_leisner_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/placa_leisner.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+      <br>
+      <div class="gallery" style="background-image: url('images/placa-idolo_3d_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="https://sketchfab.com/3d-models/jc-79-35-placa-idolo-idol-plaque-4ba667cc933d4bb1a63f67fabd5df9f6" target="_blank" class=""><div class="empty-full"><span class="number-multiple-image">3</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/placa_foto_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/placa_foto.jpg" class=""><div class="empty-full"><span class="number-multiple-image">4</span></div></a>
+      </div>
+      </div>
+      <div class="modal_content_50 modal_content_right">
+      <h1><span class="modal_titulo">Placa ídolo</span></h1>
+      <ul>
+      <li><h3>Descrição</h3></li>
+      <li>Placa em pedra (metapelito), com duas perfurações numa das extremidades, possivelmente para suspensão. Numa das faces apresenta linhas onduladas pintadas a ocre, característica rara neste tipo de artefactos. Foi encontrada por José Coelho durante as escavações da anta de Mamaltar de Vale Fachas, em 1911. Os resultados destes trabalhos foram divulgados pelo autor, em 1912, na publicação “A Pré-História e o seu ensino: A Anta de Mamaltar de Vale de Fachas”.</li>
+      <li><h3>ÉPOCA</h3></li>
+      <li>Neolítico</li>
+      <li><h3>ACERVO</h3></li>
+      <li>Coleção Arqueológica José Coelho, JC-79-35</li>
+      <li><h3>MEDIDAS (mm)</h3></li>
+      <li>70 (altura), 60-45 (largura), 19 (espessura máxima)</li>
+      </ul>
+      <p><span class="nome-creditos">1</span> Desenho publicado em COELHO, José (1912) - <i>A préistoria e o seu ensino: Mamaltar do vale de Fachas</i>. Estudos Préistóricos. Viseu: ed. do autor.</p>
+      <p><span class="nome-creditos">2</span> Desenho publicado em LEISNER, Vera (1998) - <i>Die Megalithgräber der Ibeirichen Halbinsel. Der Western, Lieferung 4</i>. Berlin : De Gruyter.</p>
+      <p><span class="nome-creditos">3</span> Modelo 3D do PAVAAH.</p>
+      <p><span class="nome-creditos">4</span> Fotografia do PAVAAH.</p>
+      </div>
+    </div>
+</div>
+
+<div id="pucaro" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_50 modal_content_left">
+      <div class="gallery" style="background-image: url('images/pucaro_foto_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/pucaro_foto.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/pucaro_3d_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="https://sketchfab.com/3d-models/jc-79-191-pote-ceramico-ceramic-pot-d7818c5059794d8ab64edf3342dbd3c4" target="_blank" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+      <br>
+      <div class="gallery" style="background-image: url('images/pucaro_desenho_leisner_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/pucaro_desenho_leisner.jpg" target="_blank" class=""><div class="empty-full"><span class="number-multiple-image">3</span></div></a>
+      </div>
+        </div>
+      <div class="modal_content_50 modal_content_right">
+      <h1><span class="modal_titulo">Púcaro</span></h1>
+      <ul>
+      <li><h3>Descrição</h3></li>
+      <li>Pequeno recipiente cerâmico, em calote de esfera, de cor e forma irregulares, sem qualquer decoração. Foi recolhido por José Coelho durante as escavações da anta de Mamaltar de Vale Fachas, em 1911. Os resultados destes trabalhos foram divulgados pelo autor, em 1912, na publicação “A Pré-História e o seu ensino: A Anta de Mamaltar de Vale de Fachas”.</li>
+      <li><h3>ÉPOCA</h3></li>
+      <li>Neolítico</li>
+      <li><h3>ACERVO</h3></li>
+      <li>Coleção Arqueológica José Coelho, JC-79-191</li>
+      <li><h3>MEDIDAS (mm)</h3></li>
+      <li>70 (altura), 88 (diâmetro da abertura)</li>
+      </ul>
+      <p><span class="nome-creditos">1</span> Fotografia do PAVAAH.</p>
+      <p><span class="nome-creditos">2</span> Modelo 3D do PAVAAH.</p>
+      <p><span class="nome-creditos">3</span> Desenho publicado em LEISNER, Vera (1998) - <i>Die Megalithgräber der Ibeirichen Halbinsel. Der Western, Lieferung 4</i>. Berlin : De Gruyter.</p>
+      </div>
+    </div>
+</div>
+
+<div id="vaso" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_50 modal_content_left">
+      <div class="gallery" style="background-image: url('images/vaso_foto_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/vaso_foto.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/vaso_desenho_leisner_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/vaso_desenho_leisner.jpg" target="_blank" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+        </div>
+      <div class="modal_content_50 modal_content_right">
+      <h1><span class="modal_titulo">Vaso</span></h1>
+      <ul>
+      <li><h3>Descrição</h3></li>
+      <li>Vaso de barro de fundo esférico. Forma globular, apertado no gargalo. Fabrico manual sendo a pasta grosseira, mal cozida, de cor castanho claro, com grossos grãos de quartzo e mica. Foi recolhido por JOsé Coelho durante as escavações da anta de Mamaltar de Vale de Fachas, em 1911.</li>
+      <li><h3>ÉPOCA</h3></li>
+      <li>Neolítico</li>
+      <li><h3>ACERVO</h3></li>
+      <li>Coleção Arqueológica José Coelho, JC-79-188</li>
+      <li><h3>MEDIDAS (mm)</h3></li>
+      <li>230 (diâmetro maior), 90 (diâmetro da abertura)</li>
+      </ul>
+      <p><span class="nome-creditos">1</span> Fotografia do PAVAAH.</p>
+      <p><span class="nome-creditos">2</span> Desenho publicado em LEISNER, Vera (1998) - <i>Die Megalithgräber der Ibeirichen Halbinsel. Der Western, Lieferung 4</i>. Berlin : De Gruyter.</p>
+      </div>
+    </div>
+</div>
+
+<div id="pinturac1" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_70 modal_content_left">
+      <div class="gallery" style="background-image: url('images/CNA659_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/CNA659.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/CNA717_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/CNA717.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/c1_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c1.jpg" class=""><div class="empty-full"><span class="number-multiple-image">3</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/c1_foto_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c1_foto.jpg" class=""><div class="empty-full"><span class="number-multiple-image">4</span></div></a>
+      </div>
+      </div>
+      <div class="modal_content_30 modal_content_right">
+      <h1><span class="modal_titulo">Esteio C1</span></h1>
+      <p><span class="nome-creditos">1</span> José Coelho detetou vestígios de pintura neste esteio, assim como no esteio C8, numa visita ao local em 9 de fevereiro de 1930. COELHO, José (09.02.1930) - <i>Cadernos de Notas Arqueológicas</i>. nº5, Folha 39.</p>
+      <p><span class="nome-creditos">2</span> Posteriormente, a 3 de maio de 1930, mandou desaterrar os esteios da câmara confirmando a descoberta. COELHO, José (03.05.1930) - <i>Cadernos de Notas Arqueológicas</i>. nº6, Folha 7. </p>
+      <p><span class="nome-creditos">3</span> Desenho publicado em SHEE TWOHIG, Elizabeth (1981) - <i>The Megalithic Art of Western Europe</i>, Oxford, Clarendon Press.</p>
+      <p><span class="nome-creditos">4</span> Fotografia do PAVAAH.</p>
+      </div>
+    </div>
+</div>
+
+<div id="pinturac8" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_70 modal_content_left">
+      <div class="gallery" style="background-image: url('images/CNA659_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/CNA659.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/CNA717_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/CNA717.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/c8_foto_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c8_foto.jpg" class=""><div class="empty-full"><span class="number-multiple-image">3</span></div></a>
+      </div>
+      </div>
+      <div class="modal_content_30 modal_content_right">
+      <h1><span class="modal_titulo">Esteio C8</span></h1>
+      <p><span class="nome-creditos">1</span> José Coelho detetou vestígios de pintura neste esteio, assim como no esteio C1, numa visita ao local em 9 de fevereiro de 1930. COELHO, José (09.02.1930) - <i>Cadernos de Notas Arqueológicas</i>. nº5, Folha 39.</p>
+      <p><span class="nome-creditos">2</span> Posteriormente, a 3 de maio de 1930, mandou desaterrar os esteios da câmara confirmando a descoberta. COELHO, José (03.05.1930) - <i>Cadernos de Notas Arqueológicas</i>. nº6, Folha 7. </p>
+      <p><span class="nome-creditos">3</span> Fotografia do PAVAAH.</p>
+      </div>
+    </div>
+</div>
+
+<div id="machadoum" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_50 modal_content_left">
+      <div class="gallery" style="background-image: url('images/machadoum_foto_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/machadoum_foto.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/machadoum_3d_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="https://sketchfab.com/3d-models/jc-79-88-machado-de-pedra-polida-stone-axe-c31f5a37685e4fa3aedc5412a33c8948" target="_blank" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+      <br>
+      <div class="gallery" style="background-image: url('images/machadoum_desenho_leisner_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/machadoum_desenho_leisner.jpg" target="_blank" class=""><div class="empty-full"><span class="number-multiple-image">3</span></div></a>
+      </div>
+      </div>
+      <div class="modal_content_50 modal_content_right">
+      <h1><span class="modal_titulo">Machado de pedra polida</span></h1>
+      <ul>
+      <li><h3>Descrição</h3></li>
+      <li>Instrumento de pedra polida, em anfibolito. Apresenta um gume cortante numa das extremidades. Na extremidade oposta, fragmentada neste exemplar, seria ligado a um cabo feito de materiais perecíveis (madeira/ osso), o que permitia a sua manipulação como machado. Este objeto faz parte do espólio recolhido por José Coelho nas suas escavações, de 1911, em Mamaltar de Vale de Fachas.</li>
+      <li><h3>ÉPOCA</h3></li>
+      <li>Neolítico</li>
+      <li><h3>ACERVO</h3></li>
+      <li>Coleção Arqueológica José Coelho, JC-79-88</li>
+      <li><h3>MEDIDAS (mm)</h3></li>
+      <li>110 (comprimento), 59 (largura), 27 (espessura)</li>
+      </ul>
+      <p><span class="nome-creditos">1</span> Fotografia do PAVAAH.</p>
+      <p><span class="nome-creditos">2</span> Modelo 3D do PAVAAH.</p>
+      <p><span class="nome-creditos">3</span> Desenho publicado em LEISNER, Vera (1998) - <i>Die Megalithgräber der Ibeirichen Halbinsel. Der Western, Lieferung 4</i>. Berlin : De Gruyter.</p>
+      </div>
+    </div>
+</div>
+
+<div id="machadodois" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_50 modal_content_left">
+      <div class="gallery" style="background-image: url('images/machadodois_foto_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/machadodois_foto.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/machadodois_3d_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="https://sketchfab.com/3d-models/jc-79-118-machado-de-pedra-polida-stone-axe-65c3611cb275419685614dc0cdc55823" target="_blank" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+      <br>
+      <div class="gallery" style="background-image: url('images/machadodois_desenho_leisner_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/machadodois_desenho_leisner.jpg" target="_blank" class=""><div class="empty-full"><span class="number-multiple-image">3</span></div></a>
+      </div>
+        </div>
+      <div class="modal_content_50 modal_content_right">
+      <h1><span class="modal_titulo">Machado de pedra polida</span></h1>
+      <ul>
+      <li><h3>Descrição</h3></li>
+      <li>Instrumento de pedra polida, em anfibolito. Apresenta um gume cortante numa das extremidades. Na extremidade oposta, fragmentada neste exemplar, seria ligado a um cabo feito de materiais perecíveis (madeira/ osso), o que permitia a sua manipulação como machado. Este objeto faz parte do espólio recolhido por José Coelho nas suas escavações, de 1911, em Mamaltar de Vale de Fachas.</li>
+      <li><h3>ÉPOCA</h3></li>
+      <li>Neolítico</li>
+      <li><h3>ACERVO</h3></li>
+      <li>Coleção Arqueológica José Coelho, JC-79-118</li>
+      <li><h3>MEDIDAS (mm)</h3></li>
+      <li>105 (comprimento), 68 (largura), 25 (espessura)</li>
+      </ul>
+      <p><span class="nome-creditos">1</span> Fotografia do PAVAAH.</p>
+      <p><span class="nome-creditos">2</span> Modelo 3D do PAVAAH.</p>
+      <p><span class="nome-creditos">3</span> Desenho publicado em LEISNER, Vera (1998)</span> - <i>Die Megalithgräber der Ibeirichen Halbinsel. Der Western, Lieferung 4</i>. Berlin : De Gruyter.</p>
+      </div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+<script src="vendor/DeviceOrientationControlMethod.js"></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+<script src="js/jquery.modal.min.js"></script>
+<script src="js/simple-lightbox.min.js"></script>
+
+<script src="init.js"></script>
+
+<script>
+(function() {
+		var $gallery = new SimpleLightbox('.gallery a', {
+      nav: false,
+      captions: true,
+      showCounter: false,
+      animationSpeed: 100
+      });
+    	})();
+</script>
+
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#welcome-modal').modal();
+    });
+</script>
+
+</body>
+</html>

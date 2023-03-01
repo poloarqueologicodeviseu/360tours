@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Antela da Pedralta - PAV360 - Polo Arqueológico de Viseu António Almeida Henriques</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/jquery.modal.min.css" />
+<link rel="stylesheet" href="css/simple-lightbox.min.css" />
+<link rel="stylesheet" href="css/pav.css">
+<link rel="stylesheet" href="css/linkview.css">
+<link rel="stylesheet" href="css/linkhotspots.css">
+<link rel="stylesheet" href="css/infoboard.css">
+<link rel="stylesheet" href="css/infohotspots.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPYS60PG5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YMPYS60PG5');
+</script>
+</head>
+<body class="multiple-scenes ">
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+  <a href="javascript:void(0)" class="scene" data-id="0-pano_r0020656_hdr-1_stamp"><li class="text">Topo da Mamoa</li></a>
+  <a href="javascript:void(0)" class="scene" data-id="1-pano_r0020660_hdr_stamp"><li class="text">Câmara</li></a>
+  </ul>
+</div>
+
+<div id="titleBar"><h1 class="sceneName"></h1></div>
+
+<div id="toggleDeviceOrientation"></div>
+<a href="javascript:void(0)" id="autorotateToggle"><img class="icon off" src="img/play.png"><img class="icon on" src="img/pause.png"></a>
+<a href="javascript:void(0)" id="fullscreenToggle"><img class="icon off" src="img/fullscreen.png"><img class="icon on" src="img/windowed.png"></a>
+<a href="javascript:void(0)" id="sceneListToggle"><img class="icon off" src="img/expand.png"><img class="icon on" src="img/collapse.png"></a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1"><img class="icon" src="img/up.png"></a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2"><img class="icon" src="img/down.png"></a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3"><img class="icon" src="img/left.png"></a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4"><img class="icon" src="img/right.png"></a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5"><img class="icon" src="img/plus.png"></a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6"><img class="icon" src="img/minus.png"></a>
+
+<div id="welcome-modal" class="modal">
+    <div class="modal_content_main hidemodal-small">
+        <div class="modal_content_50 modal_content_left welcome-logo"></div>
+        <div class="modal_content_50 modal_content_right">
+        <div class="welcome-right">
+          <h1 id="welcome-title">Antela da Pedralta</h1>
+          <h2 id="welcome-title">Visita Virtual 360</h2>
+          <h3><a id="start-button" href="#" rel="modal:close">ENTRAR</a></h3>
+          <p><br /></p>
+          <h6 id="welcome-footer">CC-BY 2022 | PAVAAH</h6>
+        </div>
+        </div>
+    </div>
+    <div class="modal_content_main hidemodal-desktop">
+        <div class="welcome-right">
+        <img src="images/logo2.jpg" class="responsive-image">
+        <h1 id="welcome-title">Antela da Pedralta</h1>
+        <h2 id="welcome-title" style="margin-top: -1em;">Visita Virtual 360</h2>
+          <h3><a id="start-button" href="#" rel="modal:close">ENTRAR</a></h3>
+          <p><br /></p>
+          <h6 id="welcome-footer">CC-BY 2022 | PAVAAH</h6>
+        </div>
+    </div>
+</div>
+
+<a href="#ficha-modal" class="modal_about modali" rel="modal:open"><img class="icon" src="img/info.png"></a>
+
+<div id="ficha-modal" class="modal">
+    <div class="modal_content_main hidemodal-small">
+        <div class="modal_content_70 modal_content_left">
+          <h1>Antela da Pedralta</h1>
+          <p>Este monumento mantém muito bem preservada a mamoa e a câmara. A partir desta visita pode também aceder à visita virtual da Anta Maior da Pedralta.</p>
+          <ul class="lista-fix">
+          <li><span class="nome-creditos">CNS</span> 25114</li>
+          <li><span class="nome-creditos">Tipologia</span> Anta</li>
+          <li><span class="nome-creditos">Época</span> Neolítico</li>
+          <li><span class="nome-creditos">Protecção</span> </li>
+          <li><span class="nome-creditos">Bases de Dados</span> <a class="external-link" target="_blank" href="https://arqueologia.patrimoniocultural.pt/index.php?sid=sitios&subsid=2599407">Endovélico</a></li>
+          <li><span class="nome-creditos">Descrição</span> Dólmen aberto, de planta poligonal alongada, de sete esteios, com 2 m de altura e 2,10 m de largura máxima; a entrada antingiria, na base, a largura de 0,70 m; a laje de cabeceira terá sido extraída depois dos trabalhos de J. Coelho, ou encontrar-se-á tombada no interior da câmara; tumulus, de planta ovalada, medindo actualmente, de eixos maior e menor, 18 m (O-E) e 15 m (S-N), e 2 m de altura, situando-se ao nível do topo dos esteios da câmara; a ESE observa-se, um pouco distante da câmara, um esteio fincado.</li>
+          </ul>
+          <h2>Localização</h2>
+          <ul  class="lista-fix">
+          <li><span class="nome-creditos">Freguesia</span> Cota</li>
+          <li><span class="nome-creditos">GPS</span> 40.783944, -7.828154</li>
+          <li><span class="nome-creditos">Acesso</span> À margem de um caminho carreteiro que conduz a Sanguinhedo; dista cerca de 150 m para SSO da Orca 1 da Pedralta. Ver no <a class="external-link" target="_blank" href="https://umap.openstreetmap.fr/en/map/megalitismo-em-viseu_546391#18/40.78444/-7.82838">Mapa</a>.</li>
+          </ul>
+          <h2>Trabalhos</h2>
+          <ul  class="lista-fix">
+            <li><span class="nome-creditos">2014</span> Prospeção (EIncA - Parque Eólico dos 3 Marcos e linha aérea a 15 kV e 60 kV, Moimenta da Beira/Viseu) - Sílvia Mónica Loureiro Mendes</li>
+            <li><span class="nome-creditos">1999</span> Prospeção (PNTA/98 - O Alto Paiva - Sociedade e Estratégias de Povoamento desde a Pré-História Recente à Alta Idade Média) - Domingos de Jesus da Cruz</li>
+            <li><span class="nome-creditos">1912</span> Escavação - José Coelho</li>
+          </ul>
+          <h2>Referências</h2>
+          <ul  class="lista-fix">
+          <li>CARVALHO, Pedro Sobral de (2013) - <i>José Coelho Coleção Arqueológica: A paixão pelo passado - Catálogo da Exposição</i>. Viseu: CM Viseu.</li>
+          <li>COELHO, José (1924) - <i>Policromia megalítica</i>. Estudos Préistóricos 2. Viseu: ed. do autor.</li>
+          <li>PEDRO, Ivone dos Santos da Silva; VAZ, João Luis da Inês; ADOLFO, Jorge (1994) - <i><a  class="external-link" target="_blank" href="https://issuu.com/jorgeammarques2017/docs/jorge_adolfo_m._marques__roteiro_ar">Roteiro Arqueológico da Região de Turismo Dão Lafões</a></i>. Viseu: Região de Turismo Dão Lafões.</li>
+          <li>PIPA, Ana; SOBRAL Pedro Sobral de (1988) - Escavações Arqueológicas de José Coelho (1912-1917). <i>Livro do I Colóquio Arqueológico de Viseu</i>.Viseu: s/e, pp. 10-15.</li>
+          </ul>
+        </div>
+
+        <div class="modal_content_30 modal_content_right">
+          <h2 class="notopmargin">Ficha Técnica</h2>
+          <ul>
+          <li><h3>Projeto, Design e Implementação</h3></li>
+          <li>Polo Arqueológico de Viseu António Almeida Henriques</li>
+          </ul>
+          <ul class="lista-fix">
+            <li class="aviso">Os conteúdos da ficha tem como ponto de partida a informação disponibilizada na base de dados Endovélico do Portal do Arqueólogo, um serviço da DGPC (Direção-Geral do Património Cultural). Os dados vão sendo atualizados pelo PAVAAH a partir de outras fontes e de visitas aos locais. </li>
+          </ul>
+          <h2>Contactos</h2>
+          <ul>
+            <li>Casa do Miradouro</li>
+            <li>Largo António José Pereira</li>
+            <li>Viseu 3500-080 Portugal</li>
+            <li> &nbsp;</li>
+            <li><span class="material-icons">mail_outline</span> casadomiradouro@cmviseu.pt</li>
+            <li><span class="material-icons">phone</span> 232 425 388</li>
+          </ul>
+          <h2>Licença</h2>
+          <ul>
+            <li class="aviso"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este trabalho está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons - Atribuição  4.0 Internacional</a>.
+              <br>O conteúdo original deste website é da autoria do Polo Arqueológico de Viseu António Almeida Henriques.
+              <br>Todos os textos, imagens e outros conteúdos não originais foram incluídas para fins educacionais e de divulgação, não estão sujeitas à licença Creative Commons acima identificada.
+              </li>
+          </ul>
+        </div>
+    </div>
+    <div class="modal_content_main_small hidemodal-desktop">
+        <div class="modal_content_100">
+        <h1>Antela da Pedralta</h1>
+          <p>Este monumento mantém muito bem preservada a mamoa e a câmara. A partir desta visita pode também aceder à visita virtual da Anta Maior da Pedralta.</p>        
+        <ul class="lista-fix">
+        <li><span class="nome-creditos">CNS</span> 25114</li>
+        <li><span class="nome-creditos">Tipologia</span> Anta</li>
+        <li><span class="nome-creditos">Época</span> Neolítico</li>
+        <li><span class="nome-creditos">Protecção</span> </li>
+        <li><span class="nome-creditos">Bases de Dados</span> <a class="external-link" target="_blank" href="https://arqueologia.patrimoniocultural.pt/index.php?sid=sitios&subsid=2599407">Endovélico</a></li>
+        <li><span class="nome-creditos">Descrição</span> Dólmen aberto, de planta poligonal alongada, de sete esteios, com 2 m de altura e 2,10 m de largura máxima; a entrada antingiria, na base, a largura de 0,70 m; a laje de cabeceira terá sido extraída depois dos trabalhos de J. Coelho, ou encontrar-se-á tombada no interior da câmara; tumulus, de planta ovalada, medindo actualmente, de eixos maior e menor, 18 m (O-E) e 15 m (S-N), e 2 m de altura, situando-se ao nível do topo dos esteios da câmara; a ESE observa-se, um pouco distante da câmara, um esteio fincado.</li>
+        </ul>
+        <h2>Localização</h2>
+        <ul  class="lista-fix">
+        <li><span class="nome-creditos">Freguesia</span> Cota</li>
+        <li><span class="nome-creditos">GPS</span> 40.783944, -7.828154</li>
+        <li><span class="nome-creditos">Acesso</span> À margem de um caminho carreteiro que conduz a Sanguinhedo; dista cerca de 150 m para SSO da Orca 1 da Pedralta. Ver no <a class="external-link" target="_blank" href="https://umap.openstreetmap.fr/en/map/megalitismo-em-viseu_546391#18/40.78444/-7.82838">Mapa</a>.</li>
+        </ul>
+        <h2>Trabalhos</h2>
+        <ul  class="lista-fix">
+          <li><span class="nome-creditos">2014</span> Prospeção (EIncA - Parque Eólico dos 3 Marcos e linha aérea a 15 kV e 60 kV, Moimenta da Beira/Viseu) - Sílvia Mónica Loureiro Mendes</li>
+          <li><span class="nome-creditos">1999</span> Prospeção (PNTA/98 - O Alto Paiva - Sociedade e Estratégias de Povoamento desde a Pré-História Recente à Alta Idade Média) - Domingos de Jesus da Cruz</li>
+          <li><span class="nome-creditos">1912</span> Escavação - José Coelho</li>
+        </ul>
+        <h2>Referências</h2>
+        <ul  class="lista-fix">
+        <li>CARVALHO, Pedro Sobral de (2013) - <i>José Coelho Coleção Arqueológica: A paixão pelo passado - Catálogo da Exposição</i>. Viseu: CM Viseu.</li>
+        <li>COELHO, José (1924) - <i>Policromia megalítica</i>. Estudos Préistóricos 2. Viseu: ed. do autor.</li>
+        <li>PEDRO, Ivone dos Santos da Silva; VAZ, João Luis da Inês; ADOLFO, Jorge (1994) - <i><a  class="external-link" target="_blank" href="https://issuu.com/jorgeammarques2017/docs/jorge_adolfo_m._marques__roteiro_ar">Roteiro Arqueológico da Região de Turismo Dão Lafões</a></i>. Viseu: Região de Turismo Dão Lafões.</li>
+        <li>PIPA, Ana; SOBRAL Pedro Sobral de (1988) - Escavações Arqueológicas de José Coelho (1912-1917). <i>Livro do I Colóquio Arqueológico de Viseu</i>.Viseu: s/e, pp. 10-15.</li>
+        </ul>
+      </div>
+        <div class="modal_content_100">
+        <h2>Ficha Técnica</h2>
+        <ul>
+        <li><h3>Projeto, Design e Implementação</h3></li>
+        <li>Polo Arqueológico de Viseu António Almeida Henriques</li>
+        </ul>
+        <ul>
+          <li class="aviso">Os conteúdos da ficha tem como ponto de partida a informação disponibilizada na base de dados Endovélico do Portal do Arqueólogo, um serviço da DGPC (Direção-Geral do Património Cultural). Os dados vão sendo atualizados pelo PAVAAH a partir de outras fontes e de visitas aos locais. </li>
+        </ul>
+        <h2>Contactos</h2>
+        <ul>
+          <li>Casa do Miradouro</li>
+          <li>Largo António José Pereira</li>
+          <li>Viseu 3500-080 Portugal</li>
+          <li> &nbsp;</li>
+          <li><span class="material-icons">mail_outline</span> casadomiradouro@cmviseu.pt</li>
+          <li><span class="material-icons">phone</span> 232 425 388</li>
+        </ul>
+        <h2>Licença</h2>
+        <ul>
+          <li class="aviso"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este trabalho está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons - Atribuição  4.0 Internacional</a>.
+            <br>O conteúdo original deste website é da autoria do Polo Arqueológico de Viseu António Almeida Henriques.
+            <br>Todos os textos, imagens e outros conteúdos não originais foram incluídas para fins educacionais e de divulgação, não estão sujeitas à licença Creative Commons acima identificada.
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>
+
+<!-- mapa -->
+<a href="#mapa_mmpn" class="modal_map  modali" rel="modal:open"><img class="icon" src="img/map.svg"></a>
+
+<div id="mapa_mmpn" class="modal">
+  <div class="modal_content_main hidemodal-small">
+    <div class="modal_content_70 modal_content_left">
+      <h1><span class="modal_titulo">Mapa da Visita</span></h1>
+      <div id="mapa-fundo"><span style="position: absolute;bottom: 10px;font-size:0.6em;">Mapa baseado na imagem publicada em Coelho (1924).</span>
+      </div>
+    </div>
+  <div class="modal_content_30 modal_content_right" style="padding-left:5%;">
+    <div id="mapList">
+      <ul class="scenes">
+      <li class="text"><span> &nbsp;</span></li>
+      <li class="text"><span> &nbsp;</span></li>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-pano_r0020656_hdr-1_stamp"><li class="text"><span>1 Topo da mamoa</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="1-pano_r0020660_hdr_stamp"><li class="text"><span>2 Câmara</span></li></a>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="modal_content_main_small hidemodal-desktop">
+    <h1><span class="modal_titulo">Mapa da Visita</span></h1>
+    <img src="images/antela.svg" class="responsive-image">
+  <div id="mapList">
+    <ul class="scenes">
+      <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-pano_r0020656_hdr-1_stamp"><li class="text"><span>1 Topo da mamoa</span></li></a>
+      <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="1-pano_r0020660_hdr_stamp"><li class="text"><span>2 Câmara</span></li></a>
+    </ul>
+  </div>
+<p style="font-size:0.6em;"><br>Mapa baseado na imagem publicada em Coelho (1924).</p>
+</div>
+</div>
+
+
+
+
+
+
+<script src="js/jquery.min.js"></script>
+
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+<script src="vendor/DeviceOrientationControlMethod.js"></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+<script src="js/jquery.modal.min.js"></script>
+<script src="js/simple-lightbox.min.js"></script>
+
+<script src="init.js"></script>
+
+<script>
+(function() {
+		var $gallery = new SimpleLightbox('.gallery a', {
+      nav: false,
+      captions: false,
+      showCounter: false,
+      animationSpeed: 100
+      });
+    	})();
+</script>
+
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#welcome-modal').modal();
+    });
+</script>
+
+</body>
+</html>

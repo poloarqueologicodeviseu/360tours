@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Anta da Lameira do Fojo 1 - PAV360 - Polo Arqueológico de Viseu António Almeida Henriques</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/jquery.modal.min.css" />
+<link rel="stylesheet" href="css/simple-lightbox.min.css" />
+<link rel="stylesheet" href="css/pav.css">
+<link rel="stylesheet" href="css/linkview.css">
+<link rel="stylesheet" href="css/linkhotspots.css">
+<link rel="stylesheet" href="css/infoboard.css">
+<link rel="stylesheet" href="css/infohotspots.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPYS60PG5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YMPYS60PG5');
+</script>
+</head>
+
+<body class="multiple-scenes ">
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+<a href="javascript:void(0)" class="scene" data-id="0-pano0001"><li class="text">Vista aérea</li></a>
+<a href="javascript:void(0)" class="scene" data-id="3-r0011276"><li class="text">Entrada</li></a>
+<a href="javascript:void(0)" class="scene" data-id="0-r0011281"><li class="text">Corredor 1</li></a>
+<a href="javascript:void(0)" class="scene" data-id="1-r0011284"><li class="text">Corredor 2</li></a>
+<a href="javascript:void(0)" class="scene" data-id="0-pano0001-no"><li class="text">Câmara</li></a>
+<a href="javascript:void(0)" class="scene" data-id="0-r0011133"><li class="text">Vista NO</li></a>
+<a href="javascript:void(0)" class="scene" data-id="3-r0011132"><li class="text">Topo da Mamoa</li></a>
+  </ul>
+</div>
+
+<div id="titleBar"><h1 class="sceneName"></h1></div>
+
+<div id="toggleDeviceOrientation"></div>
+<a href="javascript:void(0)" id="autorotateToggle"><img class="icon off" src="img/play.png"><img class="icon on" src="img/pause.png"></a>
+<a href="javascript:void(0)" id="fullscreenToggle"><img class="icon off" src="img/fullscreen.png"><img class="icon on" src="img/windowed.png"></a>
+<a href="javascript:void(0)" id="sceneListToggle"><img class="icon off" src="img/expand.png"><img class="icon on" src="img/collapse.png"></a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1"><img class="icon" src="img/up.png"></a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2"><img class="icon" src="img/down.png"></a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3"><img class="icon" src="img/left.png"></a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4"><img class="icon" src="img/right.png"></a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5"><img class="icon" src="img/plus.png"></a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6"><img class="icon" src="img/minus.png"></a>
+
+<div id="welcome-modal" class="modal">
+    <div class="modal_content_main hidemodal-small">
+        <div class="modal_content_50 modal_content_left welcome-logo"></div>
+        <div class="modal_content_50 modal_content_right">
+        <div class="welcome-right">
+          <h1 id="welcome-title">Anta da Lameira do Fojo 1</h1>
+          <h2 id="welcome-title">Visita Virtual 360</h2>
+          <h3><a id="start-button" href="#" rel="modal:close">ENTRAR</a></h3>
+          <p><br /></p>
+          <h6 id="welcome-footer">CC-BY 2022 | PAVAAH</h6>
+        </div>
+        </div>
+    </div>
+    <div class="modal_content_main hidemodal-desktop">
+        <div class="welcome-right">
+        <img src="images/logo2.jpg" class="responsive-image">
+        <h1 id="welcome-title">Anta da Lameira do Fojo 1</h1>
+        <h2 id="welcome-title" style="margin-top: -1em;">Visita Virtual 360</h2>
+          <h3><a id="start-button" href="#" rel="modal:close">ENTRAR</a></h3>
+          <p><br /></p>
+          <h6 id="welcome-footer">CC-BY 2022 | PAVAAH</h6>
+        </div>
+    </div>
+</div>
+
+<a href="#ficha-modal" class="modal_about modali" rel="modal:open"><img class="icon" src="img/info.png"></a>
+
+<div id="ficha-modal" class="modal">
+    <div class="modal_content_main hidemodal-small">
+        <div class="modal_content_70 modal_content_left">
+          <h1>Anta da Lameira do Fojo 1</h1>
+          <p>Inserido numa necrópole mais ampla, que inclui construções funerárias de diferentes épocas e morfologias, a Anta da Lameira do Fojo 1 mantém muito bem preservado o corredor de acesso à câmara. Nesta construção foram identificadas pinturas com representações da figura humana, uma das quais armada de arco e flecha. Nesta visita pode visualizar imagens antigas e diferentes levantamentos da planta do monumento, assim como registos gráficos das pinturas. Poderá ainda aceder a bibliografia sobre este sítio arqueológico e a sua investigação, assim como à visita virtual da Lameira do Fojo 2.</p>
+          <ul class="lista-fix">
+          <li><span class="nome-creditos">CNS</span> 2427</li>
+          <li><span class="nome-creditos">Tipologia</span> Anta</li>
+          <li><span class="nome-creditos">Época</span> Neolítico</li>
+          <li><span class="nome-creditos">Protecção</span> Imóvel de Interesse Público - <a class="external-link" target="_blank" href="https://files.dre.pt/1s/1992/06/126b02/00520054.pdf">Decreto n.º 26-A/92, DR, I Série-B, n.º 126, de 1-06-1992</a></li>
+          <li><span class="nome-creditos">Bases de Dados</span> <a class="external-link" target="_blank" href="http://arqueologia.patrimoniocultural.pt/index.php?sid=sitios&amp;subsid=49103">Endovélico</a>, <a class="external-link" target="_blank" href="http://www.monumentos.gov.pt/site/app_pagesuser/SIPA.aspx?id=4250">SIPA</a> e <a class="external-link" target="_blank" href="http://www.patrimoniocultural.gov.pt/pt/patrimonio/patrimonio-imovel/pesquisa-do-patrimonio/classificado-ou-em-vias-de-classificacao/geral/view/75009">Ulysses</a></li>
+          <li><span class="nome-creditos">Descrição</span> Monumento que também surge na bibliografia referido como Lobagueira 4. Monumento constituido por grande mamoa (ainda bem conservada), com corredor intacto e câmara parcialmente destruída. Esta última, de formato poligonal apresenta apenas três esteios e meio, dos quais dois se mantém erectos e um inclinado para o interior. Dos sete esteios que fazem parte do corredor, três têm pinturas em que são visiveis dois antropomorfos. Há também vestigios de pinturas nos esteios que restam da câmara.</li>
+          </ul>
+          <h2>Localização</h2>
+          <ul  class="lista-fix">
+          <li><span class="nome-creditos">Freguesia</span> Coutos de Viseu</li>
+          <li><span class="nome-creditos">GPS</span> 40.698538, -7.980368</li>
+          <li><span class="nome-creditos">Acesso</span> EN 337-1 Viseu-Vouzela à direita em Couto de Cima. Depois da povoação da Lobagueira 100m à direita em caminho rural. Ver no <a class="external-link" target="_blank" href="https://umap.openstreetmap.fr/en/map/megalitismo-em-viseu_546391#17/40.69952/-7.97986">Mapa</a>.</li>
+          </ul>
+          <h2>Trabalhos</h2>
+          <ul  class="lista-fix">
+          <li><span class="nome-creditos">2020</span> Prospeção (EIA da Central solar fotovoltaica Lupina, Viseu) - Gabriel Rocha Pereira e António Jorge do Nascimento Arrais</li>
+          <li><span class="nome-creditos">2000</span> Relocalização/Identificação (Relocalização, identificação e inspecção de Sítios pela Extensão do IPA - Viseu) - Ana Rita Neves da Rosa Lopes, António João Nunes Monteiro e Maria Gertrudes Azinheira Branco</li>
+          <li><span class="nome-creditos">1989</span> Manutenção, proteção, conservação e restauro (Trabalhos de valorização de sítios arqueológicos no concelho de Viseu) - Ana Isabel de Sá Ferreira Pipa e Pedro Manuel Sobral de Carvalho</li>
+          <li><span class="nome-creditos">1989</span> Outros (Valorização do Património Megalítico) - Ana Maria Cameirão Leite da Cunha</li>
+          <li><span class="nome-creditos">1966</span> Parcialmente escavado por Vera Leisner e Leonel Ribeiro.</li>
+          </ul>
+          <h2>Referências</h2>
+          <ul  class="lista-fix">
+          <li>ALVES, Lara Bacelar; CARVALHO, Pedro Sobral de (2018) - <a class="external-link" target="_blank" href="https://www.academia.edu/38482826/Carvalho_P_S_Alves_L_B_2018_A_Necr%C3%B3pole_da_Lobagueira_Viseu_express%C3%B5es_de_arte_e_arquitectura_da_Beira_Alta_Portugal_pdf">A Necrópole da Lobagueira, Viseu: Expressões de Arte e Arquitectura do Megalitismo da Beira Alta, Centro de Portugal</a>. In SENNA-MARTINEZ, João Carlos; DINIZ, Mariana; CARVALHO, António Faustino, eds. - <i>De Gibraltar aos Pirinéus. Megalitismo, vida e morte na fachada Atlântica peninsular</i>. Nelas: Fundação Lapa do Lobo, pp. 431–452.</li>
+          <li>CRUZ, Domingos (1990) - <i><a class="external-link" target="_blank" href="https://www.researchgate.net/publication/317317891_Domingos_J_Cruz_coord_I_Coloquio_Arqueologico_de_Viseu_Viseu_28_de_Abril_1988_1_de_Maio_de_1988_Visita_de_estudo_Itinerario_Arqueologico_Os_monumentos_megaliticos_e_de_tradicao_megalitica_Viseu_1988_P">Visita de estudo. Itinerário Arqueológico. Os monumentos megalíticos e de tradição megalítica</a></i> Integrada no I Colóquio Arqueológico de Viseu.</li>
+          <li>GIRÃO, Aristides de Amorim (1923-1924) - <a class="external-link" target="_blank" href="http://www.patrimoniocultural.gov.pt/static/data/publicacoes/o_arqueologo_portugues/serie_1/volume_26/282_monumentos_pre_historicos.pdf">Monumentos pre-históricos do Concelho de Viseu</a>. <i>O Arqueólogo Português</i>. Lisboa. Série I. 26, pp. 282–288.</li>
+          <li>GOMES, Luís Filipe Coutinho; CARVALHO, Pedro Sobral de (1995) - A Mamoa 1 da Lameira do Fojo (Couto de Cima, Viseu). <i>Estudos Pré-Históricos</i>. Viseu. 3, pp. 213-221.</li>
+          <li>LEISNER, Vera (1998) - <i>Die Megalithgräber der Ibeirichen Halbinsel. Der Western, Lieferung 4</i>. Berlin : De Gruyter.</li>
+          <li>MOITA, Irisalva Nóbrega (1966) - Características predominantes do grupo dolménico da Beira Alta. <i>Ethnos</i>. 5, pp. 189–277.</li>          <li>PEDRO, Ivone dos Santos da Silva; VAZ, João Luis da Inês; ADOLFO, Jorge (1994) - <i><a  class="external-link" target="_blank" href="https://issuu.com/jorgeammarques2017/docs/jorge_adolfo_m._marques__roteiro_ar">Roteiro Arqueológico da Região de Turismo Dão Lafões</a></i>. Viseu: Região de Turismo Dão Lafões.</li>
+          <li>RIBEIRO, Leonel; LEISNER, Vera (1968) - Relatório dos trabalhos da missão arqueológica Leisner/Ribeiro, realizados na Beira Alta (...). <i>Arqueologia e História</i>. Lisboa. 9ª série. 1, pp. 11-28.</li>
+          <li>SANTOS, André; CRUZ, Domingos; BARBOSA, António (2012) - <a class="external-link" target="_blank" href="https://www.researchgate.net/publication/322665516_Gravuras_e_pinturas_em_dolmenes_O_Grupo_de_Viseu_de_E_Shee_1981_trinta_anos_depois">Gravuras e pinturas em dólmenes. O “Grupo de Viseu” de E. Shee (1981) trinta anos depois</a>. <i>Estudos Pré-Históricos</i>. Viseu. XVII, pp. 25–57.</li>
+          <li>SHEE, Elizabeth (1974) - Painted megalithic art in western Iberia. <i>Actas do III Congresso Nacional de Arqueologia</i>. Porto: Junta Nacional de Educação, pp. 105-123.</li>
+          <li>SHEE TWOHIG, Elizabeth (1981) - <i>The Megalithic Art of Western Europe</i>. Oxford: Clarendon Press.</li>
+          </ul>
+        </div>
+
+        <div class="modal_content_30 modal_content_right">
+          <h2 class="notopmargin">Ficha Técnica</h2>
+          <ul>
+          <li><h3>Projeto, Design e Implementação</h3></li>
+          <li>Polo Arqueológico de Viseu António Almeida Henriques</li>
+          </ul>
+          <ul class="lista-fix">
+            <li class="aviso">Os conteúdos da ficha tem como ponto de partida a informação disponibilizada na base de dados Endovélico do Portal do Arqueólogo, um serviço da DGPC (Direção-Geral do Património Cultural). Os dados vão sendo atualizados pelo PAVAAH a partir de outras fontes e de visitas aos locais. </li>
+          </ul>
+          <h2>Contactos</h2>
+          <ul>
+            <li>Casa do Miradouro</li>
+            <li>Largo António José Pereira</li>
+            <li>Viseu 3500-080 Portugal</li>
+            <li> &nbsp;</li>
+            <li><span class="material-icons">mail_outline</span> casadomiradouro@cmviseu.pt</li>
+            <li><span class="material-icons">phone</span> 232 425 388</li>
+          </ul>
+          <h2>Licença</h2>
+          <ul>
+            <li class="aviso"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este trabalho está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons - Atribuição  4.0 Internacional</a>.
+              <br>O conteúdo original deste website é da autoria do Polo Arqueológico de Viseu António Almeida Henriques.
+              <br>Todos os textos, imagens e outros conteúdos não originais foram incluídas para fins educacionais e de divulgação, não estão sujeitas à licença Creative Commons acima identificada.
+              </li>
+          </ul>
+        </div>
+    </div>
+    <div class="modal_content_main_small hidemodal-desktop">
+        <div class="modal_content_100">
+        <h1>Anta da Lameira do Fojo 1</h1>
+          <p>Inserido numa necrópole mais ampla, que inclui construções funerárias de diferentes épocas e morfologias, a Anta da Lameira do Fojo 1 mantém muito bem preservado o corredor de acesso à câmara. Nesta construção foram identificadas pinturas com representações da figura humana, uma das quais armada de arco e flecha. Nesta visita pode visualizar imagens antigas e diferentes levantamentos da planta do monumento, assim como registos gráficos das pinturas. Poderá ainda aceder a bibliografia sobre este sítio arqueológico e a sua investigação, assim como à visita virtual da Lameira do Fojo 2.</p>        
+        <ul class="lista-fix">
+        <li><span class="nome-creditos">CNS</span> 2427</li>
+        <li><span class="nome-creditos">Tipologia</span> Anta</li>
+        <li><span class="nome-creditos">Época</span> Neolítico</li>
+        <li><span class="nome-creditos">Protecção</span> Imóvel de Interesse Público - <a class="external-link" target="_blank" href="">Decreto n.º 26-A/92, DR, I Série-B, n.º 126, de 1-06-1992</a></li>
+        <li><span class="nome-creditos">Bases de Dados</span> <a class="external-link" target="_blank" href="http://arqueologia.patrimoniocultural.pt/index.php?sid=sitios&amp;subsid=49103">Endovélico</a>, <a class="external-link" target="_blank" href="http://www.monumentos.gov.pt/site/app_pagesuser/SIPA.aspx?id=4250">SIPA</a> e <a class="external-link" target="_blank" href="http://www.patrimoniocultural.gov.pt/pt/patrimonio/patrimonio-imovel/pesquisa-do-patrimonio/classificado-ou-em-vias-de-classificacao/geral/view/75009">Ulysses</a></li>
+        <li><span class="nome-creditos">Descrição</span> Monumento que também surge na bibliografia referido como Lobagueira 4. Monumento constituido por grande mamoa (ainda bem conservada), com corredor intacto e câmara parcialmente destruída. Esta última, de formato poligonal apresenta apenas três esteios e meio, dos quais dois se mantém erectos e um inclinado para o interior. Dos sete esteios que fazem parte do corredor, três têm pinturas em que são visiveis dois antropomorfos. Há também vestigios de pinturas nos esteios que restam da câmara.</li>
+        </ul>
+        <h2>Localização</h2>
+        <ul  class="lista-fix">
+        <li><span class="nome-creditos">Freguesia</span> Coutos de Viseu</li>
+        <li><span class="nome-creditos">GPS</span> 40.698538, -7.980368</li>
+          <li><span class="nome-creditos">Acesso</span> EN 337-1 Viseu-Vouzela à direita em Couto de Cima. Depois da povoação da Lobagueira 100m à direita em caminho rural. Ver no <a class="external-link" target="_blank" href="https://umap.openstreetmap.fr/en/map/megalitismo-em-viseu_546391#17/40.69952/-7.97986">Mapa</a>.</li>
+      </ul>
+        <h2>Trabalhos</h2>
+        <ul  class="lista-fix">
+        <li><span class="nome-creditos">2020</span> Prospeção (EIA da Central solar fotovoltaica Lupina, Viseu) - Gabriel Rocha Pereira e António Jorge do Nascimento Arrais</li>
+        <li><span class="nome-creditos">2000</span> Relocalização/Identificação (Relocalização, identificação e inspecção de Sítios pela Extensão do IPA - Viseu) - Ana Rita Neves da Rosa Lopes, António João Nunes Monteiro e Maria Gertrudes Azinheira Branco</li>
+        <li><span class="nome-creditos">1989</span> Manutenção, proteção, conservação e restauro (Trabalhos de valorização de sítios arqueológicos no concelho de Viseu) - Ana Isabel de Sá Ferreira Pipa e Pedro Manuel Sobral de Carvalho</li>
+        <li><span class="nome-creditos">1989</span> Outros (Valorização do Património Megalítico) - Ana Maria Cameirão Leite da Cunha</li>
+        <li><span class="nome-creditos">1966</span> Parcialmente escavado por Vera Leisner e Leonel Ribeiro.</li>
+        </ul>
+        <h2>Referências</h2>
+        <ul  class="lista-fix">
+        <li>ALVES, Lara Bacelar; CARVALHO, Pedro Sobral de (2018) - <a class="external-link" target="_blank" href="https://www.academia.edu/38482826/Carvalho_P_S_Alves_L_B_2018_A_Necr%C3%B3pole_da_Lobagueira_Viseu_express%C3%B5es_de_arte_e_arquitectura_da_Beira_Alta_Portugal_pdf">A Necrópole da Lobagueira, Viseu: Expressões de Arte e Arquitectura do Megalitismo da Beira Alta, Centro de Portugal</a>. In SENNA-MARTINEZ, João Carlos; DINIZ, Mariana; CARVALHO, António Faustino, eds. - <i>De Gibraltar aos Pirinéus. Megalitismo, vida e morte na fachada Atlântica peninsular</i>. Nelas: Fundação Lapa do Lobo, pp. 431–452.</li>
+        <li>CRUZ, Domingos (1990) - <i><a class="external-link" target="_blank" href="https://www.researchgate.net/publication/317317891_Domingos_J_Cruz_coord_I_Coloquio_Arqueologico_de_Viseu_Viseu_28_de_Abril_1988_1_de_Maio_de_1988_Visita_de_estudo_Itinerario_Arqueologico_Os_monumentos_megaliticos_e_de_tradicao_megalitica_Viseu_1988_P">Visita de estudo. Itinerário Arqueológico. Os monumentos megalíticos e de tradição megalítica</a></i> Integrada no I Colóquio Arqueológico de Viseu.</li>
+        <li>GIRÃO, Aristides de Amorim (1923-1924) - <a class="external-link" target="_blank" href="http://www.patrimoniocultural.gov.pt/static/data/publicacoes/o_arqueologo_portugues/serie_1/volume_26/282_monumentos_pre_historicos.pdf">Monumentos pre-históricos do Concelho de Viseu</a>. <i>O Arqueólogo Português</i>. Lisboa. Série I. 26, pp. 282–288.</li>
+        <li>GOMES, Luís Filipe Coutinho; CARVALHO, Pedro Sobral de (1995) - A Mamoa 1 da Lameira do Fojo (Couto de Cima, Viseu). <i>Estudos Pré-Históricos</i>. Viseu. 3, pp. 213-221.</li>
+        <li>LEISNER, Vera (1998) - <i>Die Megalithgräber der Ibeirichen Halbinsel. Der Western, Lieferung 4</i>. Berlin : De Gruyter.</li>
+        <li>MOITA, Irisalva Nóbrega (1966) - Características predominantes do grupo dolménico da Beira Alta. <i>Ethnos</i>. 5, pp. 189–277.</li>          <li>PEDRO, Ivone dos Santos da Silva; VAZ, João Luis da Inês; ADOLFO, Jorge (1994) - <i><a  class="external-link" target="_blank" href="https://issuu.com/jorgeammarques2017/docs/jorge_adolfo_m._marques__roteiro_ar">Roteiro Arqueológico da Região de Turismo Dão Lafões</a></i>. Viseu: Região de Turismo Dão Lafões.</li>
+        <li>RIBEIRO, Leonel; LEISNER, Vera (1968) - Relatório dos trabalhos da missão arqueológica Leisner/Ribeiro, realizados na Beira Alta (...). <i>Arqueologia e História</i>. Lisboa. 9ª série. 1, pp. 11-28.</li>
+        <li>SANTOS, André; CRUZ, Domingos; BARBOSA, António (2012) - <a class="external-link" target="_blank" href="https://www.researchgate.net/publication/322665516_Gravuras_e_pinturas_em_dolmenes_O_Grupo_de_Viseu_de_E_Shee_1981_trinta_anos_depois">Gravuras e pinturas em dólmenes. O “Grupo de Viseu” de E. Shee (1981) trinta anos depois</a>. <i>Estudos Pré-Históricos</i>. Viseu. XVII, pp. 25–57.</li>
+        <li>SHEE, Elizabeth (1974) - Painted megalithic art in western Iberia. <i>Actas do III Congresso Nacional de Arqueologia</i>. Porto: Junta Nacional de Educação, pp. 105-123.</li>
+        <li>SHEE TWOHIG, Elizabeth (1981) - <i>The Megalithic Art of Western Europe</i>. Oxford: Clarendon Press.</li>
+        </ul>
+        </div>
+        <div class="modal_content_100">
+        <h2>Ficha Técnica</h2>
+        <ul>
+        <li><h3>Projeto, Design e Implementação</h3></li>
+        <li>Polo Arqueológico de Viseu António Almeida Henriques</li>
+        </ul>
+        <ul>
+          <li class="aviso">Os conteúdos da ficha tem como ponto de partida a informação disponibilizada na base de dados Endovélico do Portal do Arqueólogo, um serviço da DGPC (Direção-Geral do Património Cultural). Os dados vão sendo atualizados pelo PAVAAH a partir de outras fontes e de visitas aos locais. </li>
+        </ul>
+        <h2>Contactos</h2>
+        <ul>
+          <li>Casa do Miradouro</li>
+          <li>Largo António José Pereira</li>
+          <li>Viseu 3500-080 Portugal</li>
+          <li> &nbsp;</li>
+          <li><span class="material-icons">mail_outline</span> casadomiradouro@cmviseu.pt</li>
+          <li><span class="material-icons">phone</span> 232 425 388</li>
+        </ul>
+        <h2>Licença</h2>
+        <ul>
+          <li class="aviso"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este trabalho está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons - Atribuição  4.0 Internacional</a>.
+            <br>O conteúdo original deste website é da autoria do Polo Arqueológico de Viseu António Almeida Henriques.
+            <br>Todos os textos, imagens e outros conteúdos não originais foram incluídas para fins educacionais e de divulgação, não estão sujeitas à licença Creative Commons acima identificada.
+            </li>
+        </ul>
+      </div>
+        </div>
+    </div>
+</div>
+
+<!-- mapa -->
+<a href="#mapa_mmpn" class="modal_map  modali" rel="modal:open"><img class="icon" src="img/map.svg"></a>
+
+<div id="mapa_mmpn" class="modal">
+  <div class="modal_content_main hidemodal-small">
+    <div class="modal_content_70 modal_content_left">
+      <h1><span class="modal_titulo">Mapa da Visita</span></h1>
+      <div id="mapa-fundo"><span style="position: absolute;bottom: 10px;font-size:0.6em;">Mapa baseado na imagem publicada em Shee Twohig (1981).</span>
+      </div>
+    </div>
+  <div class="modal_content_30 modal_content_right" style="padding-left:5%;">
+    <div id="mapList">
+      <ul class="scenes">
+      <li class="text"><span> &nbsp;</span></li>
+      <li class="text"><span> &nbsp;</span></li>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-pano0001"><li class="text"><span>1 Vista aérea</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="3-r0011276"><li class="text"><span>2 Entrada</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-r0011281"><li class="text"><span>3 Corredor 1</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="1-r0011284"><li class="text"><span>4 Corredor 2</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-pano0001-no"><li class="text"><span>5 Câmara</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-r0011133"><li class="text"><span>6 Vista NO</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="3-r0011132"><li class="text"><span>7 Topo da Mamoa</span></li></a>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="modal_content_main_small hidemodal-desktop">
+    <h1><span class="modal_titulo">Mapa da Visita</span></h1>
+    <img src="images/fojo.svg" class="responsive-image">
+  <div id="mapList">
+    <ul class="scenes">
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-pano0001"><li class="text"><span>1 Vista aérea</span></li></a>
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="3-r0011276"><li class="text"><span>2 Entrada</span></li></a>
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-r0011281"><li class="text"><span>3 Corredor 1</span></li></a>
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="1-r0011284"><li class="text"><span>4 Corredor 2</span></li></a>
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-pano0001-no"><li class="text"><span>5 Câmara</span></li></a>
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-r0011133"><li class="text"><span>6 Vista NO</span></li></a>
+    <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="3-r0011132"><li class="text"><span>7 Topo da Mamoa</span></li></a>
+    </ul>
+  </div>
+<p style="font-size:0.6em;"><br>Mapa baseado na imagem publicada em Shee Twohig (1981).</p>
+</div>
+</div>
+
+<div id="galeria" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_70 modal_content_left">
+      <div class="gallery" style="background-image: url('images/foto1_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/foto1.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/foto2_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/foto2.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/foto3_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/foto3.jpg" class=""><div class="empty-full"><span class="number-multiple-image">3</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/foto4_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/foto4.jpg" class=""><div class="empty-full"><span class="number-multiple-image">4</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/foto5_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/foto5.jpg" class=""><div class="empty-full"><span class="number-multiple-image">5</span></div></a>
+      </div>
+      </div>
+      <div class="modal_content_30 modal_content_right">
+      <h1><span class="modal_titulo">Galeria</span></h1>
+      <p><span class="nome-creditos">1-5</span> Fotografias do PAVAAH.</p>
+      </div>
+    </div>
+</div>
+
+<div id="plantas" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_70 modal_content_left">
+      <div class="gallery" style="background-image: url('images/mapa_shee_thumb.jpg');  float:left;width: 48%; height: 48%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/mapa_shee.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/mapa_sobral_thumb.jpg');  float:left;width: 48%; height: 48%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/mapa_sobral.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+
+      </div>
+      <div class="modal_content_30 modal_content_right">
+      <h1><span class="modal_titulo">Plantas</span></h1>
+      <p><span class="nome-creditos">1</span> Planta publicada em SHEE TWOHIG, Elizabeth (1981) - <i>The Megalithic Art of Western Europe</i>. Oxford: Clarendon Press. <br><span class="aviso">NOTA Foi adicionada a orientação. </span></p>
+      <p><span class="nome-creditos">2</span> Planta publicada em GOMES, Luís Filipe Coutinho; CARVALHO, Pedro Sobral de (1995) - A Mamoa 1 da Lameira do Fojo (Couto de Cima, Viseu). <i>Estudos Pré-Históricos</i>. Viseu. 3, pp. 213-221.</p>
+      </div>
+    </div>
+</div>
+
+<div id="pinturas" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_70 modal_content_left">
+      <div class="gallery" style="background-image: url('images/c3_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c3.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/l5_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/l5.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/l6_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/l6.jpg" class=""><div class="empty-full"><span class="number-multiple-image">3</span></div></a>
+      </div>
+      </div>
+      <div class="modal_content_30 modal_content_right">
+      <h1><span class="modal_titulo">Pinturas</span></h1>
+      <p><span class="nome-creditos">1-3</span> Desenhos publicado em SHEE TWOHIG, Elizabeth (1981) - <i>The Megalithic Art of Western Europe</i>. Oxford: Clarendon Press.</p>
+      </div>
+    </div>
+</div>
+<!--
+<div id="ctres" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_70 modal_content_left">
+      <div class="gallery" style="background-image: url('images/c3_thumb.jpg');  float:left;width: 48%; height: 48%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c3.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/c3_foto_thumb.jpg');  float:left;width: 48%; height: 48%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/c3_foto.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+      </div>
+      <div class="modal_content_30 modal_content_right">
+      <h1><span class="modal_titulo">Esteio C3</span></h1>
+      <p><span class="nome-creditos">1</span> Desenho publicado em SHEE TWOHIG, Elizabeth (1981) - <i>The Megalithic Art of Western Europe</i>. Oxford: Clarendon Press.</p>
+      <p><span class="nome-creditos">2</span> Fotografia do PAVAAH.</p>
+      </div>
+    </div>
+</div>
+<div id="lcinco" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_70 modal_content_left">
+      <div class="gallery" style="background-image: url('images/l5_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/l5.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/l5_foto_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/l5_foto.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+      </div>
+      <div class="modal_content_30 modal_content_right">
+      <h1><span class="modal_titulo">Esteio L5</span></h1>
+      <p>Este esteio, identificado por Shee (1974 e 1981) como L5, corresponde a L6 pois o corredor tinha mais esteios do que os observados pela investigadora (GOMES & CARVALHO, 1995).</p>
+      <p><span class="nome-creditos">1</span> Desenho publicado em SHEE TWOHIG, Elizabeth. (1981) - <i>The Megalithic Art of Western Europe</i>. Oxford: Clarendon Press.</p>
+      <p><span class="nome-creditos">2</span> Fotografia do PAVAAH.</p>
+      </div>
+    </div>
+</div>
+<div id="lseis" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_70 modal_content_left">
+      <div class="gallery" style="background-image: url('images/l6_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/l6.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+      </div>
+      <div class="gallery" style="background-image: url('images/l6_foto_thumb.jpg');  float:left;width: 45%; height: 45%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <a href="images/l6_foto.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+      </div>
+      </div>
+      <div class="modal_content_30 modal_content_right">
+      <h1><span class="modal_titulo">Esteio L6</span></h1>
+      <p>O decalque deste esteio foi originalmente publicado em SHEE (1974).</p>
+      <p>Este esteio, identificado por Shee (1974 e 1981) como L6, corresponde a L7 pois o corredor tinha mais esteios do que os observados pela investigadora (GOMES & CARVALHO, 1995).</p>
+      <p><span class="nome-creditos">1</span> Desenho publicado em SHEE TWOHIG, Elizabeth (1981) - <i>The Megalithic Art of Western Europe</i>. Oxford: Clarendon Press.</p>
+      <p><span class="nome-creditos">2</span> Fotografia do PAVAAH.</p>
+      </div>
+    </div>
+</div>
+-->
+
+
+
+<script src="js/jquery.min.js"></script>
+
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+<script src="vendor/DeviceOrientationControlMethod.js"></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+<script src="js/jquery.modal.min.js"></script>
+<script src="js/simple-lightbox.min.js"></script>
+
+<script src="init.js"></script>
+
+<script>
+(function() {
+		var $gallery = new SimpleLightbox('.gallery a', {
+      nav: false,
+      captions: true,
+      showCounter: false,
+      animationSpeed: 100
+      });
+    	})();
+</script>
+
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#welcome-modal').modal();
+    });
+</script>
+
+</body>
+</html>

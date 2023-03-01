@@ -1,0 +1,9 @@
+/* infospots texto */
+.link-hotspot {opacity: 0.7;}
+.link-hotspot-tooltip {background-color: rgb(255, 82, 82);background-color: rgba(255, 82, 82, 0.8)!important;}
+
+
+.link-hotspot {
+  width: 40px;
+  height: 40px;
+}

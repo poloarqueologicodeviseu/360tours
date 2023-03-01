@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Anta do Repilau - PAV360 - Polo Arqueológico de Viseu António Almeida Henriques</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/jquery.modal.min.css" />
+<link rel="stylesheet" href="css/simple-lightbox.min.css" />
+<link rel="stylesheet" href="css/pav.css">
+<link rel="stylesheet" href="css/linkview.css">
+<link rel="stylesheet" href="css/linkhotspots.css">
+<link rel="stylesheet" href="css/infoboard.css">
+<link rel="stylesheet" href="css/infohotspots.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPYS60PG5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YMPYS60PG5');
+</script>
+</head>
+<body class="multiple-scenes ">
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+    <a href="javascript:void(0)" class="scene" data-id="0-repilau_top"><li class="text">Vista aérea</li></a>
+      <a href="javascript:void(0)" class="scene" data-id="1-pano_r0020640_hdr-1_stamp"><li class="text">Vista Sul</li></a>
+      <a href="javascript:void(0)" class="scene" data-id="1-r0011137"><li class="text">Vista SO</li></a>
+      <a href="javascript:void(0)" class="scene" data-id="2-r0011139"><li class="text">Vista NO</li></a>
+      <a href="javascript:void(0)" class="scene" data-id="0-pano_r0020638_hdr_stamp"><li class="text">Vista Norte</li></a>
+      <a href="javascript:void(0)" class="scene" data-id="5-r0011147"><li class="text">Entrada</li></a>
+      <a href="javascript:void(0)" class="scene" data-id="4-r0011144"><li class="text">Corredor</li></a>
+      <a href="javascript:void(0)" class="scene" data-id="3-r0011142"><li class="text">Câmara</li></a>
+  </ul>
+</div>
+
+<div id="titleBar"><h1 class="sceneName"></h1></div>
+
+<div id="toggleDeviceOrientation"></div>
+<a href="javascript:void(0)" id="autorotateToggle"><img class="icon off" src="img/play.png"><img class="icon on" src="img/pause.png"></a>
+<a href="javascript:void(0)" id="fullscreenToggle"><img class="icon off" src="img/fullscreen.png"><img class="icon on" src="img/windowed.png"></a>
+<a href="javascript:void(0)" id="sceneListToggle"><img class="icon off" src="img/expand.png"><img class="icon on" src="img/collapse.png"></a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1"><img class="icon" src="img/up.png"></a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2"><img class="icon" src="img/down.png"></a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3"><img class="icon" src="img/left.png"></a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4"><img class="icon" src="img/right.png"></a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5"><img class="icon" src="img/plus.png"></a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6"><img class="icon" src="img/minus.png"></a>
+
+
+<div id="welcome-modal" class="modal">
+    <div class="modal_content_main hidemodal-small">
+        <div class="modal_content_50 modal_content_left welcome-logo"></div>
+        <div class="modal_content_50 modal_content_right">
+        <div class="welcome-right">
+          <h1 id="welcome-title">Anta do Repilau</h1>
+          <h2 id="welcome-title">Visita Virtual 360</h2>
+          <h3><a id="start-button" href="#" rel="modal:close">ENTRAR</a></h3>
+          <p><br /></p>
+          <h6 id="welcome-footer">CC-BY 2022 | PAVAAH</h6>
+        </div>
+        </div>
+    </div>
+    <div class="modal_content_main hidemodal-desktop">
+        <div class="welcome-right">
+        <img src="images/logo2.jpg" class="responsive-image">
+        <h1 id="welcome-title">Anta do Repilau</h1>
+        <h2 id="welcome-title" style="margin-top: -1em;">Visita Virtual 360</h2>
+          <h3><a id="start-button" href="#" rel="modal:close">ENTRAR</a></h3>
+          <p><br /></p>
+          <h6 id="welcome-footer">CC-BY 2022 | PAVAAH</h6>
+        </div>
+    </div>
+</div>
+
+<a href="#ficha-modal" class="modal_about modali" rel="modal:open"><img class="icon" src="img/info.png"></a>
+
+<div id="ficha-modal" class="modal">
+    <div class="modal_content_main hidemodal-small">
+        <div class="modal_content_70 modal_content_left">
+          <h1>Anta do Repilau</h1>
+          <p>Descoberta em 1921, pelo geógrafo Amorim Girão, a Anta de Repilau foi estudada pelos arqueólogos Georg e Vera Leisner, nos anos 60 do século passado, e escavada pelo arqueólogo Domingos Cruz nos anos 80. Neste grande dólmen de câmara e corredor são ainda visíveis pinturas e gravuras sobre os esteios da câmara. Nesta visita pode visualizar imagens antigas e diferentes levantamentos da planta do monumento, assim como registos gráficos das gravuras e pinturas. Poderá ainda aceder ao modelo 3D do monumento e a bibliografia sobre este sítio arqueológico e a sua investigação.</p>
+          <ul class="lista-fix">
+          <li><span class="nome-creditos">CNS</span> 1000</li>
+          <li><span class="nome-creditos">Tipologia</span> Anta</li>
+          <li><span class="nome-creditos">Época</span> Neolítico</li>
+          <li><span class="nome-creditos">Protecção</span> Imóvel de Interesse Público - <a class="external-link" target="_blank" href="https://files.dre.pt/1s/1993/11/280b00/66986702.pdf">Decreto n.º 45/93, DR, I Série-B, n.º 280, de 30-11-1993</a></li>
+          <li><span class="nome-creditos">Bases de Dados</span> <a class="external-link" target="_blank" href="http://arqueologia.patrimoniocultural.pt/index.php?sid=sitios&subsid=48944">Endovélico</a>, <a class="external-link" target="_blank" href="http://www.monumentos.gov.pt/site/app_pagesuser/SIPA.aspx?id=4291">SIPA</a> e <a class="external-link" target="_blank" href="http://www.patrimoniocultural.gov.pt/pt/patrimonio/patrimonio-imovel/pesquisa-do-patrimonio/classificado-ou-em-vias-de-classificacao/geral/view/75008">Ulysses</a></li>
+          <li><span class="nome-creditos">Descrição</span> A câmara, atualmente já sem laje de cobertura e com oito esteios, era constituída, originalmente, por 9 esteios formando um espaço com cerca de 2,75m de comprimento, 4m de largura e 2,75m de altura. O corredor, com cerca de 5,40m de comprimento, é composto por 8 esteios do lado norte e 9 do lado sul, com uma altura média constante de 1,80m. Estão referenciadas pinturas e gravuras nos esteios da câmara e a existência de fossetes nos esteios do corredor.</li>
+          </ul>
+          <h2>Localização</h2>
+          <ul class="lista-fix">
+          <li><span class="nome-creditos">Freguesia</span> Coutos de Viseu</li>
+          <li><span class="nome-creditos">GPS</span> 40.69504, -7.98858</li>
+          <li><span class="nome-creditos">Acesso</span>Pela EN16 (Viseu-São Pedro do Sul), tomando-se em Travanca da Bodiosa, a EM1318 que se dirige às povoações de Queirela, Lubagueira e Masgalos. O dólmen situa-se depois da povoação da Lobagueira, seguindo a placa de sinalização, a cerca de 550 metros à direita da estrada. Ver no <a class="external-link" target="_blank" href="https://umap.openstreetmap.fr/en/map/megalitismo-em-viseu_546391#18/40.69554/-7.98829">Mapa</a>.</li>
+          </ul>
+          <h2>Trabalhos</h2>
+          <ul class="lista-fix">
+          <li><span class="nome-creditos">2020</span> Prospeção (EIA da Central solar fotovoltaica Lupina, Viseu) - Gabriel Rocha Pereira e António Jorge do Nascimento Arrais</li>
+          <li><span class="nome-creditos">1988</span> Escavação (Práticas Funerárias da Idade do Bronze Final na Beira Alta) - Domingos de Jesus da Cruz</li>
+          <li><span class="nome-creditos">1966</span> Escavação (Trabalhos arqueológicos de Georg e Vera Leisner) - Leonel Ribeiro e Vera Leisner</li>
+          </ul>
+          <h2>Referências</h2>
+          <ul class="lista-fix">
+          <li>ALVES, Lara Bacelar; CARVALHO, Pedro Sobral de (2018) - <a class="external-link" target="_blank" href="https://www.academia.edu/38482826/Carvalho_P_S_Alves_L_B_2018_A_Necr%C3%B3pole_da_Lobagueira_Viseu_express%C3%B5es_de_arte_e_arquitectura_da_Beira_Alta_Portugal_pdf">A Necrópole da Lobagueira, Viseu: Expressões de Arte e Arquitectura do Megalitismo da Beira Alta, Centro de Portugal</a>. In SENNA-MARTINEZ, João Carlos; DINIZ, Mariana; CARVALHO, António Faustino, eds. - <i>De Gibraltar aos Pirinéus. Megalitismo, vida e morte na fachada Atlântica peninsular</i>. Nelas: Fundação Lapa do Lobo, pp. 431–452.</li>
+          <li>CARVALHO, Pedro Sobral de (2013) - <a  class="external-link" target="_blank" href="http://www.chaia.uevora.pt/uploads/events/files/d88705631c9e954b61121fac726e5d3aa12b75a4.pdf">A arte megalítica da Lapa do Repilau, Viseu</a>. <i>Resumos do I Congresso Internacional sobre Arqueologia de Transição: O Mundo Funerário</i>. Évora: CHAIA - Centro de História da Arte e Investigação Artística, p. 14.</li>
+          <li>CRUZ, Domingos (1990) - <i><a class="external-link" target="_blank" href="https://www.researchgate.net/publication/317317891_Domingos_J_Cruz_coord_I_Coloquio_Arqueologico_de_Viseu_Viseu_28_de_Abril_1988_1_de_Maio_de_1988_Visita_de_estudo_Itinerario_Arqueologico_Os_monumentos_megaliticos_e_de_tradicao_megalitica_Viseu_1988_P">Visita de estudo. Itinerário Arqueológico. Os monumentos megalíticos e de tradição megalítica</a>.</i> Integrada no I Colóquio Arqueológico de Viseu.</li>
+          <li>GIRÃO, Aristides de Amorim (1923-1924) - <a class="external-link" target="_blank" href="http://www.patrimoniocultural.gov.pt/static/data/publicacoes/o_arqueologo_portugues/serie_1/volume_26/282_monumentos_pre_historicos.pdf">Monumentos préhistóricos do Concelho de Viseu</a>. <i>O Arqueólogo Português</i>. Lisboa. Série I. 26, pp. 282–288.</li>
+          <li>MOITA, Irisalva Nóbrega (1966) - Características predominantes do grupo dolménico da Beira Alta. <i>Ethnos</i>. 5, pp. 189–277.</li>
+          <li>PEDRO, Ivone dos Santos da Silva; VAZ, João Luis da Inês; ADOLFO, Jorge (1994) - <i><a  class="external-link" target="_blank" href="https://issuu.com/jorgeammarques2017/docs/jorge_adolfo_m._marques__roteiro_ar">Roteiro Arqueológico da Região de Turismo Dão Lafões</a></i>. Viseu: Região de Turismo Dão Lafões.</li>
+          <li>SANTOS, André; CRUZ, Domingos; BARBOSA, António (2012) - <a class="external-link" target="_blank" href="https://www.researchgate.net/publication/322665516_Gravuras_e_pinturas_em_dolmenes_O_Grupo_de_Viseu_de_E_Shee_1981_trinta_anos_depois">Gravuras e pinturas em dólmenes. O “Grupo de Viseu” de E. Shee (1981) trinta anos depois</a>. <i>Estudos Pré-Históricos</i>. Viseu. XVII, pp. 25–57.</li>
+          <li>TAVARES, António Augusto (1979) - Expressão do megalitismo nas Beiras. <i>Beira Alta</i>. Viseu. 38:3, pp. 555–584.</li>
+          </ul>
+        </div>
+
+        <div class="modal_content_30 modal_content_right">
+          <h2 class="notopmargin">Ficha Técnica</h2>
+          <ul>
+            <li><h3>Projeto, Design e Implementação</h3></li>
+            <li>Polo Arqueológico de Viseu António Almeida Henriques</li>
+          </ul>
+          <ul class="lista-fix">
+            <li class="aviso">Os conteúdos da ficha tem como ponto de partida a informação disponibilizada na base de dados Endovélico do Portal do Arqueólogo, um serviço da DGPC (Direção-Geral do Património Cultural). Os dados vão sendo atualizados pelo PAVAAH a partir de outras fontes e de visitas aos locais. </li>
+          </ul>
+          <h2>Contactos</h2>
+          <ul>
+            <li>Casa do Miradouro</li>
+            <li>Largo António José Pereira</li>
+            <li>Viseu 3500-080 Portugal</li>
+            <li> &nbsp;</li>
+            <li><span class="material-icons">mail_outline</span> casadomiradouro@cmviseu.pt</li>
+            <li><span class="material-icons">phone</span> 232 425 388</li>
+          </ul>
+          <h2>Licença</h2>
+          <ul>
+            <li class="aviso"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este trabalho está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons - Atribuição  4.0 Internacional</a>.
+              <br>O conteúdo original deste website é da autoria do Polo Arqueológico de Viseu António Almeida Henriques.
+              <br>Todos os textos, imagens e outros conteúdos não originais foram incluídas para fins educacionais e de divulgação, não estão sujeitas à licença Creative Commons acima identificada.
+              </li>
+          </ul>
+        </div>
+    </div>
+    <div class="modal_content_main_small hidemodal-desktop">
+        <div class="modal_content_100">
+        <h1>Anta do Repilau</h1>
+          <p>Descoberta em 1921, pelo geógrafo Amorim Girão, a Anta de Repilau foi estudada pelos arqueólogos Georg e Vera Leisner, nos anos 60 do século passado, e escavada pelo arqueólogo Domingos Cruz nos anos 80. Neste grande dólmen de câmara e corredor são ainda visíveis pinturas e gravuras sobre os esteios da câmara. Nesta visita pode visualizar imagens antigas e diferentes levantamentos da planta do monumento, assim como registos gráficos das gravuras e pinturas. Poderá ainda aceder ao modelo 3D do monumento e a bibliografia sobre este sítio arqueológico e a sua investigação.</p>        
+        <ul class="lista-fix">
+        <li><span class="nome-creditos">CNS</span> 1000</li>
+        <li><span class="nome-creditos">Tipologia</span> Anta</li>
+        <li><span class="nome-creditos">Época</span> Neolítico</li>
+        <li><span class="nome-creditos">Protecção</span> Imóvel de Interesse Público - <a class="external-link" target="_blank" href="https://files.dre.pt/1s/1993/11/280b00/66986702.pdf">Decreto n.º 45/93, DR, I Série-B, n.º 280, de 30-11-1993</a></li>
+        <li><span class="nome-creditos">Bases de Dados</span> <a class="external-link" target="_blank" href="http://arqueologia.patrimoniocultural.pt/index.php?sid=sitios&subsid=48944">Endovélico</a>, <a class="external-link" target="_blank" href="http://www.monumentos.gov.pt/site/app_pagesuser/SIPA.aspx?id=4291">SIPA</a> e <a class="external-link" target="_blank" href="http://www.patrimoniocultural.gov.pt/pt/patrimonio/patrimonio-imovel/pesquisa-do-patrimonio/classificado-ou-em-vias-de-classificacao/geral/view/75008">Ulysses</a></li>
+        <li><span class="nome-creditos">Descrição</span> A câmara, atualmente já sem laje de cobertura e com oito esteios, era constituída, originalmente, por 9 esteios formando um espaço com cerca de 2,75m de comprimento, 4m de largura e 2,75m de altura. O corredor, com cerca de 5,40m de comprimento, é composto por 8 esteios do lado norte e 9 do lado sul, com uma altura média constante de 1,80m. Estão referenciadas pinturas e gravuras nos esteios da câmara e a existência de fossetes nos esteios do corredor.</li>
+        </ul>
+        <h2>Localização</h2>
+        <ul class="lista-fix">
+        <li><span class="nome-creditos">Freguesia</span> Coutos de Viseu</li>
+        <li><span class="nome-creditos">GPS</span> 40.69504, -7.98858</li>
+        <li><span class="nome-creditos">Acesso</span> Pela EN16 (Viseu-São Pedro do Sul), tomando-se em Travanca da Bodiosa, a EM1318 que se dirige às povoações de Queirela, Lubagueira e Masgalos. O dólmen situa-se depois da povoação da Lobagueira, seguindo a placa de sinalização, a cerca de 550 metros à direita da estrada. Ver no <a class="external-link" target="_blank" href="https://umap.openstreetmap.fr/en/map/megalitismo-em-viseu_546391#18/40.69554/-7.98829">Mapa</a>.</li>
+        </ul>
+        <h2>Trabalhos</h2>
+        <ul class="lista-fix">
+        <li><span class="nome-creditos">2020</span> Prospeção (EIA da Central solar fotovoltaica Lupina, Viseu) - Gabriel Rocha Pereira e António Jorge do Nascimento Arrais</li>
+        <li><span class="nome-creditos">1988</span> Escavação (Práticas Funerárias da Idade do Bronze Final na Beira Alta) - Domingos de Jesus da Cruz</li>
+        <li><span class="nome-creditos">1966</span> Escavação (Trabalhos arqueológicos de Georg e Vera Leisner) - Leonel Ribeiro e Vera Leisner</li>
+        </ul>
+        <h2>Referências</h2>
+        <ul class="lista-fix">
+        <li>ALVES, Lara Bacelar; CARVALHO, Pedro Sobral de (2018) - <a class="external-link" target="_blank" href="https://www.academia.edu/38482826/Carvalho_P_S_Alves_L_B_2018_A_Necr%C3%B3pole_da_Lobagueira_Viseu_express%C3%B5es_de_arte_e_arquitectura_da_Beira_Alta_Portugal_pdf">A Necrópole da Lobagueira, Viseu: Expressões de Arte e Arquitectura do Megalitismo da Beira Alta, Centro de Portugal</a>. In SENNA-MARTINEZ, João Carlos; DINIZ, Mariana; CARVALHO, António Faustino, eds. - <i>De Gibraltar aos Pirinéus. Megalitismo, vida e morte na fachada Atlântica peninsular</i>. Nelas: Fundação Lapa do Lobo, pp. 431–452.</li>
+        <li>CARVALHO, Pedro Sobral de (2013) - <a  class="external-link" target="_blank" href="http://www.chaia.uevora.pt/uploads/events/files/d88705631c9e954b61121fac726e5d3aa12b75a4.pdf">A arte megalítica da Lapa do Repilau, Viseu</a>. <i>Resumos do I Congresso Internacional sobre Arqueologia de Transição: O Mundo Funerário</i>. Évora: CHAIA - Centro de História da Arte e Investigação Artística, p. 14.</li>
+        <li>CRUZ, Domingos (1990) - <i><a class="external-link" target="_blank" href="https://www.researchgate.net/publication/317317891_Domingos_J_Cruz_coord_I_Coloquio_Arqueologico_de_Viseu_Viseu_28_de_Abril_1988_1_de_Maio_de_1988_Visita_de_estudo_Itinerario_Arqueologico_Os_monumentos_megaliticos_e_de_tradicao_megalitica_Viseu_1988_P">Visita de estudo. Itinerário Arqueológico. Os monumentos megalíticos e de tradição megalítica</a>.</i> Integrada no I Colóquio Arqueológico de Viseu.</li>
+        <li>GIRÃO, Aristides de Amorim (1923-1924) - <a class="external-link" target="_blank" href="http://www.patrimoniocultural.gov.pt/static/data/publicacoes/o_arqueologo_portugues/serie_1/volume_26/282_monumentos_pre_historicos.pdf">Monumentos préhistóricos do Concelho de Viseu</a>. <i>O Arqueólogo Português</i>. Lisboa. Série I. 26, pp. 282–288.</li>
+        <li>MOITA, Irisalva Nóbrega (1966) - Características predominantes do grupo dolménico da Beira Alta. <i>Ethnos</i>. 5, pp. 189–277.</li>
+        <li>PEDRO, Ivone dos Santos da Silva; VAZ, João Luis da Inês; ADOLFO, Jorge (1994) - <i><a  class="external-link" target="_blank" href="https://issuu.com/jorgeammarques2017/docs/jorge_adolfo_m._marques__roteiro_ar">Roteiro Arqueológico da Região de Turismo Dão Lafões</a></i>. Viseu: Região de Turismo Dão Lafões.</li>
+        <li>SANTOS, André; CRUZ, Domingos; BARBOSA, António (2012) - <a class="external-link" target="_blank" href="https://www.researchgate.net/publication/322665516_Gravuras_e_pinturas_em_dolmenes_O_Grupo_de_Viseu_de_E_Shee_1981_trinta_anos_depois">Gravuras e pinturas em dólmenes. O “Grupo de Viseu” de E. Shee (1981) trinta anos depois</a>. <i>Estudos Pré-Históricos</i>. Viseu. XVII, pp. 25–57.</li>
+        <li>TAVARES, António Augusto (1979) - Expressão do megalitismo nas Beiras. <i>Beira Alta</i>. Viseu. 38:3, pp. 555–584.</li>
+        </ul>
+        </div>
+        <div class="modal_content_100">
+        <h2>Ficha Técnica</h2>
+        <ul>
+        <li><h3>Projeto, Design e Implementação</h3></li>
+        <li>Polo Arqueológico de Viseu António Almeida Henriques</li>
+        </ul>
+        <ul>
+          <li class="aviso">Os conteúdos da ficha tem como ponto de partida a informação disponibilizada na base de dados Endovélico do Portal do Arqueólogo, um serviço da DGPC (Direção-Geral do Património Cultural). Os dados vão sendo atualizados pelo PAVAAH a partir de outras fontes e de visitas aos locais. </li>
+        </ul>
+        <h2>Contactos</h2>
+        <ul>
+          <li>Casa do Miradouro</li>
+          <li>Largo António José Pereira</li>
+          <li>Viseu 3500-080 Portugal</li>
+          <li> &nbsp;</li>
+          <li><span class="material-icons">mail_outline</span> casadomiradouro@cmviseu.pt</li>
+          <li><span class="material-icons">phone</span> 232 425 388</li>
+        </ul>
+        <h2>Licença</h2>
+        <ul>
+          <li class="aviso"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este trabalho está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons - Atribuição  4.0 Internacional</a>.
+            <br>O conteúdo original deste website é da autoria do Polo Arqueológico de Viseu António Almeida Henriques.
+            <br>Todos os textos, imagens e outros conteúdos não originais foram incluídas para fins educacionais e de divulgação, não estão sujeitas à licença Creative Commons acima identificada.
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>
+
+<!-- mapa -->
+<a href="#mapa_mmpn" class="modal_map  modali" rel="modal:open"><img class="icon" src="img/map.svg"></a>
+
+<div id="mapa_mmpn" class="modal">
+  <div class="modal_content_main hidemodal-small">
+    <div class="modal_content_70 modal_content_left">
+      <h1><span class="modal_titulo">Mapa da Visita</span></h1>
+    <div id="mapa-fundo"><span style="position: absolute;bottom: 10px;font-size:0.6em;">Mapa baseado na imagem publicada em Cruz (1990).</span></div>
+      </div>
+  <div class="modal_content_30 modal_content_right" style="padding-left:5%;">
+    <div id="mapList">
+      <ul class="scenes">
+      <li class="text"><span> &nbsp;</span></li>
+      <li class="text"><span> &nbsp;</span></li>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-repilau_top"><li class="text"><span>1 Vista aérea</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="1-pano_r0020640_hdr-1_stamp"><li class="text"><span>2 Vista Sul</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="1-r0011137"><li class="text"><span>3 Vista SO</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="2-r0011139"><li class="text"><span>4 Vista NO</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-pano_r0020638_hdr_stamp"><li class="text"><span>5 Vista Norte</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="5-r0011147"><li class="text"><span>6 Entrada</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="4-r0011144"><li class="text"><span>7 Corredor</span></li></a>
+        <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="3-r0011142"><li class="text"><span>8 Câmara</span></li></a>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="modal_content_main_small hidemodal-desktop">
+    <h1><span class="modal_titulo">Mapa da Visita</span></h1>
+    <img src="images/repilau.svg" class="responsive-image">
+    <div id="mapList">
+    <ul class="scenes">
+      <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-repilau_top"><li class="text"><span>1 Vista aérea</span></li></a>
+      <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="1-pano_r0020640_hdr-1_stamp"><li class="text"><span>2 Vista Sul</span></li></a>
+      <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="1-r0011137"><li class="text"><span>3 Vista SO</span></li></a>
+      <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="2-r0011139"><li class="text"><span>4 Vista NO</span></li></a>
+      <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="0-pano_r0020638_hdr_stamp"><li class="text"><span>5 Vista Norte</span></li></a>
+      <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="5-r0011147"><li class="text"><span>6 Entrada</span></li></a>
+      <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="4-r0011144"><li class="text"><span>7 Corredor</span></li></a>
+      <a href="javascript:void(0)" rel="modal:close"  class="scene" data-id="3-r0011142"><li class="text"><span>8 Câmara</span></li></a>    </ul>
+  </div>
+<p style="font-size:0.6em;"><br>Mapa baseado na imagem publicada em Cruz (1990).</p>
+</div>
+</div>
+
+<div id="plantas" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_60 modal_content_left">
+        <div class="gallery" style="background-image: url('images/repilau_plantas_girao_thumb.jpg'); float:left;width: 48%; height: 48%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/repilau_plantas_girao.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/repilau_plantas_leisner_thumb.jpg'); float:left;width: 48%; height: 48%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/repilau_plantas_leisner.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/repilau_plantas_cruz_thumb.jpg'); float:left;width: 48%; height: 48%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/repilau_plantas_cruz.jpg" class=""><div class="empty-full"><span class="number-multiple-image">3</span></div></a>
+        </div>
+      </div>
+      <div class="modal_content_40 modal_content_right">
+      <h1><span class="modal_titulo">Plantas</span></h1>
+      <p><span class="nome-creditos">1</span> Planta de GIRÃO, Aristides de Amorim (1923-1924) - <a class="external-link" target="_blank" href="http://www.patrimoniocultural.gov.pt/static/data/publicacoes/o_arqueologo_portugues/serie_1/volume_26/282_monumentos_pre_historicos.pdf">Monumentos préhistóricos do Concelho de Viseu</a>. <i>O Arqueólogo Português</i>. Lisboa. Série I. 26, pp. 282–288.</p>
+      <p><span class="nome-creditos">2</span> Planta de LEISNER, Georg e LEISNER, Vera (1956) - <i>Die Megalithgraber der Iberischen Halbinsel. Der Westen</i>. Berlim: Madrider Forschungen, Band 1. Adaptada da versão publicada em CRUZ, Domingos (1990) - <i><a class="external-link" target="_blank" href="https://www.researchgate.net/publication/317317891_Domingos_J_Cruz_coord_I_Coloquio_Arqueologico_de_Viseu_Viseu_28_de_Abril_1988_1_de_Maio_de_1988_Visita_de_estudo_Itinerario_Arqueologico_Os_monumentos_megaliticos_e_de_tradicao_megalitica_Viseu_1988_P">Visita de estudo. Itinerário Arqueológico. Os monumentos megalíticos e de tradição megalítica</a>.</i> Integrada no I Colóquio Arqueológico de Viseu.</p>
+      <p><span class="nome-creditos">3</span> Planta de Domingos Cruz (1988). Adaptada da versão publicadas em CRUZ, Domingos (1990) - <i><a class="external-link" target="_blank" href="https://www.researchgate.net/publication/317317891_Domingos_J_Cruz_coord_I_Coloquio_Arqueologico_de_Viseu_Viseu_28_de_Abril_1988_1_de_Maio_de_1988_Visita_de_estudo_Itinerario_Arqueologico_Os_monumentos_megaliticos_e_de_tradicao_megalitica_Viseu_1988_P">Visita de estudo. Itinerário Arqueológico. Os monumentos megalíticos e de tradição megalítica</a>.</i> Integrada no I Colóquio Arqueológico de Viseu.</p>
+      </div>
+    </div>
+</div>
+
+<div id="galeria" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_70 modal_content_left">
+        <div class="gallery" style="background-image: url('images/foto_1_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/foto_1.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/foto_2_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/foto_2.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/modelo_3d_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="https://sketchfab.com/3d-models/lapa-de-repilau-d23fdc69db85430d9995f52b45d7fc33" target="_blank" class=""><div class="empty-full"><span class="number-multiple-image">3</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/foto_3_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/foto_3.jpg" class=""><div class="empty-full"><span class="number-multiple-image">4</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/foto_4_thumb.jpg');  float:left;width: 30%; height: 30%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/foto_4.jpg" class=""><div class="empty-full"><span class="number-multiple-image">5</span></div></a>
+        </div>
+     </div>
+      <div class="modal_content_30 modal_content_right">
+      <h1><span class="modal_titulo">Galeria</span></h1>
+      <p><span class="nome-creditos">1</span> Vista aérea. Fotografia do PAVAAH (2021).</p>
+      <p><span class="nome-creditos">2</span> Vista aérea. Fotografia do PAVAAH (2021).</p>
+      <p><span class="nome-creditos">3</span> Câmara e corredor em 2018. Modelo 3D do PAVAAH (2021).</p>
+      <p><span class="nome-creditos">4</span> Vista da entrada. Fotografia do PAVAAH (2021).</p>
+      <p><span class="nome-creditos">5</span> Vista da entrada. Fotografia do PAVAAH (2016).</p>
+      </div>
+    </div>
+</div>
+
+<div id="cabeceira" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_60 modal_content_left">
+        <div class="gallery" style="background-image: url('images/cabeceira_thumb.jpg'); float:left;width: 48%; height: 48%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/cabeceira.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+        </div>
+      </div>
+      <div class="modal_content_40 modal_content_right">
+      <h1><span class="modal_titulo">Cabeceira</span></h1>
+      <p><span class="nome-creditos">1</span> Vista dos motivos no alçado S-N da câmara da Lapa do Repilau. Levantamento publicado em ALVES, Lara Bacelar; CARVALHO, Pedro Sobral de (2018) - <a class="external-link" target="_blank" href="https://www.academia.edu/38482826/Carvalho_P_S_Alves_L_B_2018_A_Necr%C3%B3pole_da_Lobagueira_Viseu_express%C3%B5es_de_arte_e_arquitectura_da_Beira_Alta_Portugal_pdf">A Necrópole da Lobagueira, Viseu: Expressões de Arte e Arquitectura do Megalitismo da Beira Alta, Centro de Portugal</a>. In SENNA-MARTINEZ, João Carlos; DINIZ, Mariana; CARVALHO, António Faustino, eds. - <i>De Gibraltar aos Pirinéus. Megalitismo, vida e morte na fachada Atlântica peninsular</i>. Nelas: Fundação Lapa do Lobo, pp. 431–452.</p>
+      </div>
+    </div>
+</div>
+
+<div id="pinturas" class="modal">
+    <div class="modal_content_main">
+      <div class="modal_content_60 modal_content_left">
+        <div class="gallery" style="background-image: url('images/pinturas_thumb.jpg');  float:left;width: 48%; height: 48%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/pinturas.jpg" class=""><div class="empty-full"><span class="number-multiple-image">1</span></div></a>
+        </div>
+        <div class="gallery" style="background-image: url('images/pinturas_foto_thumb.jpg');  float:left;width: 48%; height: 48%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+          <a href="images/pinturas_foto.jpg" class=""><div class="empty-full"><span class="number-multiple-image">2</span></div></a>
+        </div>
+      </div>
+      <div class="modal_content_40 modal_content_right">
+      <h1><span class="modal_titulo">Esteio lateral</span></h1>
+      <p><span class="nome-creditos">1</span> Levantamento publicado em Levantamento publicado em ALVES, Lara Bacelar; CARVALHO, Pedro Sobral de (2018) - <a class="external-link" target="_blank" href="https://www.academia.edu/38482826/Carvalho_P_S_Alves_L_B_2018_A_Necr%C3%B3pole_da_Lobagueira_Viseu_express%C3%B5es_de_arte_e_arquitectura_da_Beira_Alta_Portugal_pdf">A Necrópole da Lobagueira, Viseu: Expressões de Arte e Arquitectura do Megalitismo da Beira Alta, Centro de Portugal</a>. In SENNA-MARTINEZ, João Carlos; DINIZ, Mariana; CARVALHO, António Faustino, eds. - <i>De Gibraltar aos Pirinéus. Megalitismo, vida e morte na fachada Atlântica peninsular</i>. Nelas: Fundação Lapa do Lobo, pp. 431–452.</p>
+      <p><span class="nome-creditos">2</span> Motivos pintados com imagem polarizada. Fotografia publicada em Levantamento publicado em ALVES, Lara Bacelar; CARVALHO, Pedro Sobral de (2018) - <a class="external-link" target="_blank" href="https://www.academia.edu/38482826/Carvalho_P_S_Alves_L_B_2018_A_Necr%C3%B3pole_da_Lobagueira_Viseu_express%C3%B5es_de_arte_e_arquitectura_da_Beira_Alta_Portugal_pdf">A Necrópole da Lobagueira, Viseu: Expressões de Arte e Arquitectura do Megalitismo da Beira Alta, Centro de Portugal</a>. In SENNA-MARTINEZ, João Carlos; DINIZ, Mariana; CARVALHO, António Faustino, eds. - <i>De Gibraltar aos Pirinéus. Megalitismo, vida e morte na fachada Atlântica peninsular</i>. Nelas: Fundação Lapa do Lobo, pp. 431–452.</p>
+      </div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+<script src="vendor/DeviceOrientationControlMethod.js"></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+<script src="js/jquery.modal.min.js"></script>
+<script src="js/simple-lightbox.min.js"></script>
+
+<script src="init.js"></script>
+
+<script>
+(function() {
+		var $gallery = new SimpleLightbox('.gallery a', {
+      nav: false,
+      captions: true,
+      showCounter: false,
+      animationSpeed: 100
+      });
+    	})();
+</script>
+
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#welcome-modal').modal();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Anta de Mamaltar de Vale de Fachas 2 - PAV360 - Polo Arqueológico de Viseu António Almeida Henriques</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/jquery.modal.min.css" />
+<link rel="stylesheet" href="css/simple-lightbox.min.css" />
+<link rel="stylesheet" href="css/pav.css">
+<link rel="stylesheet" href="css/linkview.css">
+<link rel="stylesheet" href="css/linkhotspots.css">
+<link rel="stylesheet" href="css/infoboard.css">
+<link rel="stylesheet" href="css/infohotspots.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPYS60PG5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YMPYS60PG5');
+</script>
+</head>
+<body class="multiple-scenes ">
+
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+    <a href="javascript:void(0)" class="scene" data-id="0-pano_r0020655_hdr-2_stamp"><li class="text">Centro do monumento</li></a>
+    <a href="javascript:void(0)" class="scene" data-id="1-r0011168"><li class="text">Vista Sul</li></a>
+  </ul>
+</div>
+
+<div id="titleBar">
+  <h1 class="sceneName"></h1>
+</div>
+
+<div id="toggleDeviceOrientation"></div>
+<a href="javascript:void(0)" id="autorotateToggle"><img class="icon off" src="img/play.png"><img class="icon on" src="img/pause.png"></a>
+<a href="javascript:void(0)" id="fullscreenToggle"><img class="icon off" src="img/fullscreen.svg"><img class="icon on" src="img/windowed.svg"></a>
+<a href="javascript:void(0)" id="sceneListToggle"><img class="icon off" src="img/expand.png"><img class="icon on" src="img/collapse.png"></a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1"><img class="icon" src="img/up.png"></a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2"><img class="icon" src="img/down.png"></a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3"><img class="icon" src="img/left.png"></a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4"><img class="icon" src="img/right.png"></a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5"><img class="icon" src="img/plus.png"></a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6"><img class="icon" src="img/minus.png"></a>
+
+
+
+<div id="welcome-modal" class="modal">
+    <div class="modal_content_main hidemodal-small">
+        <div class="modal_content_50 modal_content_left welcome-logo"></div>
+        <div class="modal_content_50 modal_content_right">
+        <div class="welcome-right">
+          <h1 id="welcome-title">Mamaltar do Vale de Fachas 2</h1>
+          <h2 id="welcome-title">Visita Virtual 360</h2>
+          <h3><a id="start-button" href="#" rel="modal:close">ENTRAR</a></h3>
+          <p><br /></p>
+          <h6 id="welcome-footer">CC-BY 2022 | PAVAAH</h6>
+        </div>
+        </div>
+    </div>
+    <div class="modal_content_main hidemodal-desktop">
+        <div class="welcome-right">
+        <img src="images/logo2.jpg" class="responsive-image">
+        <h1 id="welcome-title">Mamaltar do Vale de Fachas 2</h1>
+        <h2 id="welcome-title" style="margin-top: -1em;">Visita Virtual 360</h2>
+          <h3><a id="start-button" href="#" rel="modal:close">ENTRAR</a></h3>
+          <p><br /></p>
+          <h6 id="welcome-footer">CC-BY 2022 | PAVAAH</h6>
+        </div>
+    </div>
+</div>
+
+<a href="#ficha-modal" class="modal_about modali" rel="modal:open"><img class="icon" src="img/info.png"></a>
+
+<div id="ficha-modal" class="modal">
+    <div class="modal_content_main hidemodal-small">
+        <div class="modal_content_70 modal_content_left">
+          <h1>Anta de Mamaltar de Vale de Fachas 2 </h1>
+          <p>Este monumento mantém muito bem preservada a mamoa, embora a sua arquitetura interior tenha sido destruída. A partir desta visita pode também aceder à visita virtual de Mamaltar de Vale de Fachas 1.</p>
+          <ul class="lista-fix">
+          <li><span class="nome-creditos">CNS</span> 5463</li>
+          <li><span class="nome-creditos">Tipologia</span> Mamoa</li>
+          <li><span class="nome-creditos">Época</span> Neolítico</li>
+          <li><span class="nome-creditos">Protecção</span> </li>
+          <li><span class="nome-creditos">Bases de Dados</span> <a class="external-link" target="_blank" href="http://arqueologia.patrimoniocultural.pt/index.php?sid=sitios&amp;subsid=50697">Endovélico</a></li>
+          <li><span class="nome-creditos">Descrição</span> Mamoa com cratera de violação.</li>
+          </ul>
+          <h2>Localização</h2>
+          <ul class="lista-fix">
+          <li><span class="nome-creditos">Freguesia</span> Rio de Loba</li>
+          <li><span class="nome-creditos">GPS</span> 40.680353, -7.850153</li>
+          <li><span class="nome-creditos">Acesso</span> Localiza-se nas proxímidades da anta de Malmatar de Vale de Fachas 1. Ver no <a class="external-link" target="_blank" href="https://umap.openstreetmap.fr/en/map/megalitismo-em-viseu_546391#19/40.68077/-7.85029">Mapa</a>.</li>
+          </ul>
+          <h2>Trabalhos</h2>
+          <ul  class="lista-fix">
+          <li><span class="nome-creditos">2008</span> Relocalização/Identificação (Relocalização, identificação e inspecção de Sítios pela Extensão do IPA - Viseu) - Maria Gertrudes Azinheira Branco</li>
+          <li><span class="nome-creditos">1991</span> Manutenção, proteção, conservação e restauro (Trabalhos Arqueológicos na Anta de Mamaltar de Vale de Fachas - Viseu) - Ana Maria Esteves de Oliveira da Silva Figueiredo e João Luís da Inês Vaz</li>
+          </ul>
+          <h2>Referências</h2>
+          <ul  class="lista-fix">
+          <li>MOITA, Irisalva Nóbrega (1966) - Características predominantes do grupo dolménico da Beira Alta. <i>Ethnos</i>. 5, pp. 189–277.</li>
+          <li>PEDRO, Ivone dos Santos da Silva; VAZ, João Luis da Inês; ADOLFO, Jorge (1994) - <i><a  class="external-link" target="_blank" href="https://issuu.com/jorgeammarques2017/docs/jorge_adolfo_m._marques__roteiro_ar">Roteiro Arqueológico da Região de Turismo Dão Lafões</a></i>. Viseu: Região de Turismo Dão Lafões.</li>
+          </ul>
+        </div>
+        <div class="modal_content_30 modal_content_right">
+          <h2 class="notopmargin">Ficha Técnica</h2>
+          <ul>
+          <li><h3>Projeto, Design e Implementação</h3></li>
+          <li>Polo Arqueológico de Viseu António Almeida Henriques</li>
+          </ul>
+          <ul class="lista-fix">
+            <li class="aviso">Os conteúdos da ficha tem como ponto de partida a informação disponibilizada na base de dados Endovélico do Portal do Arqueólogo, um serviço da DGPC (Direção-Geral do Património Cultural). Os dados vão sendo atualizados pelo PAVAAH a partir de outras fontes e de visitas aos locais. </li>
+          </ul>
+          <h2>Contactos</h2>
+          <ul>
+            <li>Casa do Miradouro</li>
+            <li>Largo António José Pereira</li>
+            <li>Viseu 3500-080 Portugal</li>
+            <li> &nbsp;</li>
+            <li><span class="material-icons">mail_outline</span> casadomiradouro@cmviseu.pt</li>
+            <li><span class="material-icons">phone</span> 232 425 388</li>
+          </ul>
+          <h2>Licença</h2>
+          <ul>
+          <li class="aviso"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este trabalho está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons - Atribuição  4.0 Internacional</a>.
+            <br>O conteúdo original deste website é da autoria do Polo Arqueológico de Viseu António Almeida Henriques.
+            <br>Todos os textos, imagens e outros conteúdos não originais foram incluídas para fins educacionais e de divulgação, não estão sujeitas à licença Creative Commons acima identificada.
+            </li>
+          </ul>
+
+        </div>
+    </div>
+    <div class="modal_content_main_small hidemodal-desktop">
+        <div class="modal_content_100">
+        <h1>Anta de Mamaltar de Vale de Fachas 2 </h1>
+        <p>Este monumento mantém muito bem preservada a mamoa, embora a sua arquitetura interior tenha sido destruída. A partir desta visita pode também aceder à visita virtual de Mamaltar de Vale de Fachas 1.</p>
+        <ul class="lista-fix">
+        <li><span class="nome-creditos">CNS</span> 2427</li>
+        <li><span class="nome-creditos">Tipologia</span> Anta</li>
+        <li><span class="nome-creditos">Época</span> Neolítico</li>
+        <li><span class="nome-creditos">Protecção</span> Imóvel de Interesse Público</li>
+        <li><span class="nome-creditos">Bases de Dados</span> <a class="external-link" target="_blank" href="http://arqueologia.patrimoniocultural.pt/index.php?sid=sitios&amp;subsid=49103">Endovélico</a>, <a class="external-link" target="_blank" href="http://www.monumentos.gov.pt/site/app_pagesuser/SIPA.aspx?id=4250">SIPA</a> e <a class="external-link" target="_blank" href="http://www.patrimoniocultural.gov.pt/pt/patrimonio/patrimonio-imovel/pesquisa-do-patrimonio/classificado-ou-em-vias-de-classificacao/geral/view/75009">Ulysses</a></li>
+        <li><span class="nome-creditos">Descrição</span> Monumento constituido por grande mamoa (ainda bem conservada), com corredor e câmara ainda intactos. Esta última, de formato poligonal apresenta apenas três esteios e meio, dos quais dois se mantém erectos e um inclinado para o interior. Dos sete esteios que fazem parte do corredor, três têm pinturas em que são visiveis dois antropomorfos. Há também vestigios de pinturas nos esteios que restam da câmara.</li>
+        </ul>
+        <h2>Localização</h2>
+        <ul class="lista-fix">
+        <li><span class="nome-creditos">Freguesia</span> Coutos de Viseu</li>
+        <li><span class="nome-creditos">GPS</span> 40.698538, -7.980368</li>
+        <li><span class="nome-creditos">Acesso</span> EN 337-1 Viseu-Vouzela à direita em Couto de Cima. Depois da povoação da Lobagueira 100m à direita em caminho rural. Ver no <a class="external-link" target="_blank" href="https://umap.openstreetmap.fr/en/map/megalitismo-em-viseu_546391#19/40.68077/-7.85029">Mapa</a>.</li>
+        </ul>
+        <h2>Trabalhos</h2>
+        <ul  class="lista-fix">
+        <li><span class="nome-creditos">2008</span> Relocalização/Identificação (Relocalização, identificação e inspecção de Sítios pela Extensão do IPA - Viseu) - Maria Gertrudes Azinheira Branco</li>
+        <li><span class="nome-creditos">1991</span> Manutenção, proteção, conservação e restauro (Trabalhos Arqueológicos na Anta de Mamaltar de Vale de Fachas - Viseu) - Ana Maria Esteves de Oliveira da Silva Figueiredo e João Luís da Inês Vaz</li>
+        </ul>
+        <h2>Referências</h2>
+        <ul class="lista-fix">
+        <li>MOITA, Irisalva Nóbrega (1966) - Características predominantes do grupo dolménico da Beira Alta. <i>Ethnos</i>. 5, pp. 189–277.</li>
+        <li>PEDRO, Ivone dos Santos da Silva; VAZ, João Luis da Inês; ADOLFO, Jorge (1994) - <i><a  class="external-link" target="_blank" href="https://issuu.com/jorgeammarques2017/docs/jorge_adolfo_m._marques__roteiro_ar">Roteiro Arqueológico da Região de Turismo Dão Lafões</a></i>. Viseu: Região de Turismo Dão Lafões.</li>
+        </ul>
+        </div>
+        <div class="modal_content_100">
+        <h2>Ficha Técnica</h2>
+        <ul>
+        <li><h3>Projeto, Design e Implementação</h3></li>
+        <li>Polo Arqueológico de Viseu António Almeida Henriques</li>
+        </ul>
+        <ul>
+          <li class="aviso">Os conteúdos da ficha tem como ponto de partida a informação disponibilizada na base de dados Endovélico do Portal do Arqueólogo, um serviço da DGPC (Direção-Geral do Património Cultural). Os dados vão sendo atualizados pelo PAVAAH a partir de outras fontes e de visitas aos locais. </li>
+        </ul>
+
+        <h2>Contactos</h2>
+        <ul>
+          <li>Casa do Miradouro</li>
+          <li>Largo António José Pereira</li>
+          <li>Viseu 3500-080 Portugal</li>
+          <li> &nbsp;</li>
+          <li><span class="material-icons">mail_outline</span> casadomiradouro@cmviseu.pt</li>
+          <li><span class="material-icons">phone</span> 232 425 388</li>
+        </ul>
+        <h2>Licença</h2>
+        <ul>
+          <li class="aviso"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este trabalho está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons - Atribuição  4.0 Internacional</a>.
+            <br>O conteúdo original deste website é da autoria do Polo Arqueológico de Viseu António Almeida Henriques.
+            <br>Todos os textos, imagens e outros conteúdos não originais foram incluídas para fins educacionais e de divulgação, não estão sujeitas à licença Creative Commons acima identificada.
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>
+
+<!-- mapa
+<a href="#mapa_mmpn" class="modal_map  modali" rel="modal:open"><img class="icon" src="img/map.svg"></a>
+
+<div id="mapa_mmpn" class="modal">
+  <div class="modal_content_main hidemodal-small">
+    <div class="modal_content_60 modal_content_left">
+      <h1><span class="modal_titulo">Mapa da Visita</span></h1><br>
+      <div id="mapa-fundo"></div>
+    </div>
+  <div class="modal_content_40 modal_content_right" style="padding-left:5%;">
+    <div id="mapList">
+      <ul class="scenes">
+      <li class="text"><span> &nbsp;</span></li>
+      <li class="text"><span> &nbsp;</span></li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="modal_content_main_small hidemodal-desktop">
+    <h1><span class="modal_titulo">Mapa da Visita</span></h1>
+    <img src="images/mapas.svg" class="responsive-image">
+  <div id="mapList">
+    <ul class="scenes">
+    </ul>
+  </div>
+
+</div>
+</div>
+-->
+
+
+
+<script src="js/jquery.min.js"></script>
+
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+<script src="vendor/DeviceOrientationControlMethod.js"></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+<script src="js/jquery.modal.min.js"></script>
+<script src="js/simple-lightbox.min.js"></script>
+
+<script src="init.js"></script>
+
+
+<script>
+(function() {
+		var $gallery = new SimpleLightbox('.gallery a', {
+      nav: false,
+      captions: false,
+      showCounter: false,
+      animationSpeed: 100
+      });
+    	})();
+</script>
+
+
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#welcome-modal').modal();
+    });
+</script>
+
+
+</body>
+</html>

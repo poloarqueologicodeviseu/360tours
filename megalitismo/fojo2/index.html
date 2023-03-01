@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Anta da Lameira do Fojo 2  - PAV360 - Polo Arqueológico de Viseu António Almeida Henriques</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/jquery.modal.min.css" />
+<link rel="stylesheet" href="css/simple-lightbox.min.css" />
+<link rel="stylesheet" href="css/pav.css">
+<link rel="stylesheet" href="css/linkview.css">
+<link rel="stylesheet" href="css/linkhotspots.css">
+<link rel="stylesheet" href="css/infoboard.css">
+<link rel="stylesheet" href="css/infohotspots.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPYS60PG5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YMPYS60PG5');
+</script>
+</head>
+<body class="multiple-scenes ">
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+  <a href="javascript:void(0)" class="scene" data-id="1-pano_r0011286_stamp"><li class="text">Corredor</li></a>
+  <a href="javascript:void(0)" class="scene" data-id="0-pano_r0011285_stamp"><li class="text">Centro da câmara</li>  </a>
+  </ul>
+</div>
+
+<div id="titleBar"><h1 class="sceneName"></h1></div>
+
+<div id="toggleDeviceOrientation"></div>
+<a href="javascript:void(0)" id="autorotateToggle"><img class="icon off" src="img/play.png"><img class="icon on" src="img/pause.png"></a>
+<a href="javascript:void(0)" id="fullscreenToggle"><img class="icon off" src="img/fullscreen.png"><img class="icon on" src="img/windowed.png"></a>
+<a href="javascript:void(0)" id="sceneListToggle"><img class="icon off" src="img/expand.png"><img class="icon on" src="img/collapse.png"></a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1"><img class="icon" src="img/up.png"></a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2"><img class="icon" src="img/down.png"></a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3"><img class="icon" src="img/left.png"></a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4"><img class="icon" src="img/right.png"></a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5"><img class="icon" src="img/plus.png"></a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6"><img class="icon" src="img/minus.png"></a>
+
+
+
+<div id="welcome-modal" class="modal">
+    <div class="modal_content_main hidemodal-small">
+        <div class="modal_content_50 modal_content_left welcome-logo"></div>
+        <div class="modal_content_50 modal_content_right">
+        <div class="welcome-right">
+          <h1 id="welcome-title">Anta da Lameira do Fojo 2</h1>
+          <h2 id="welcome-title">Visita Virtual 360</h2>
+          <h3><a id="start-button" href="#" rel="modal:close">ENTRAR</a></h3>
+          <p><br /></p>
+          <h6 id="welcome-footer">CC-BY 2022 | PAVAAH</h6>
+        </div>
+        </div>
+    </div>
+    <div class="modal_content_main hidemodal-desktop">
+        <div class="welcome-right">
+        <img src="images/logo2.jpg" class="responsive-image">
+        <h1 id="welcome-title">Anta da Lameira do Fojo 2</h1>
+        <h2 id="welcome-title" style="margin-top: -1em;">Visita Virtual 360</h2>
+          <h3><a id="start-button" href="#" rel="modal:close">ENTRAR</a></h3>
+          <p><br /></p>
+          <h6 id="welcome-footer">CC-BY 2022 | PAVAAH</h6>
+        </div>
+    </div>
+</div>
+
+<a href="#ficha-modal" class="modal_about modali" rel="modal:open"><img class="icon" src="img/info.png"></a>
+
+<div id="ficha-modal" class="modal">
+    <div class="modal_content_main hidemodal-small">
+        <div class="modal_content_70 modal_content_left">
+          <h1>Anta da Lameira do Fojo 2</h1>
+          <p>Inserido numa necrópole mais ampla, que inclui construções funerárias de diferentes épocas e morfologias, a Anta da Lameira do Fojo 2 mantém muito bem preservada a mamoa, embora a sua arquitetura interior tenha sido destruída. A partir desta visita pode também aceder à visita virtual da Lameira do Fojo 1.</p>
+          <ul class="lista-fix">
+          <li><span class="nome-creditos">CNS</span> 5086</li>
+          <li><span class="nome-creditos">Tipologia</span> Anta</li>
+          <li><span class="nome-creditos">Época</span> Neolítico</li>
+          <li><span class="nome-creditos">Protecção</span> </li>
+          <li><span class="nome-creditos">Bases de Dados</span> <a class="external-link" target="_blank" href="https://arqueologia.patrimoniocultural.pt/index.php?sid=sitios&subsid=51471">Endovélico</a></li>
+          <li><span class="nome-creditos">Descrição</span> Dólmen de corredor e câmara envolto por um tumulus, este último muito destruído. O tumulus é muito alto, com cerca de 3m, e com um diâmetro sensivelmente de 17,70m. Encontra-se a 100m do Lameira do Fojo 1.</li>
+          </ul>
+          <h2>Localização</h2>
+          <ul class="lista-fix">
+          <li><span class="nome-creditos">Freguesia</span> Coutos de Viseu</li>
+          <li><span class="nome-creditos">GPS</span> 40.697981, -7.979903</li>
+          <li><span class="nome-creditos">Acesso</span> EN 337-1 Viseu-Vouzela à direita em Couto de Cima. Depois da povoação da Lobagueira, (Av. Fontalinho), depois de 500m, à direita em caminho rural (355m). Ver no <a class="external-link" target="_blank" href="https://umap.openstreetmap.fr/en/map/megalitismo-em-viseu_546391#17/40.69743/-7.97978">Mapa</a>.</li>
+          </ul>
+          <h2>Trabalhos</h2>
+          <ul  class="lista-fix">
+          <li><span class="nome-creditos">2020</span> Prospeção (EIA da Central solar fotovoltaica Lupina, Viseu) - Gabriel Rocha Pereira e António Jorge do Nascimento Arrais</li>
+          <li><span class="nome-creditos">1989</span> Manutenção, proteção, conservação e restauro (Trabalhos de valorização de sítios arqueológicos no concelho de Viseu) - Luís Filipe Coutinho Lopes Gomes e Pedro Manuel Sobral de Carvalho</li>
+          </ul>
+          <h2>Referências</h2>
+          <ul class="lista-fix">
+          <li>PEDRO, Ivone dos Santos da Silva; VAZ, João Luis da Inês; ADOLFO, Jorge (1994) - <i><a  class="external-link" target="_blank" href="https://issuu.com/jorgeammarques2017/docs/jorge_adolfo_m._marques__roteiro_ar">Roteiro Arqueológico da Região de Turismo Dão Lafões</a></i>. Viseu: Região de Turismo Dão Lafões.</li>
+          </ul>
+        </div>
+        <div class="modal_content_30 modal_content_right">
+          <h2 class="notopmargin">Ficha Técnica</h2>
+          <ul>
+          <li><h3>Projeto, Design e Implementação</h3></li>
+          <li>Polo Arqueológico de Viseu António Almeida Henriques</li>
+          </ul>
+          <ul class="lista-fix">
+            <li class="aviso">Os conteúdos da ficha tem como ponto de partida a informação disponibilizada na base de dados Endovélico do Portal do Arqueólogo, um serviço da DGPC (Direção-Geral do Património Cultural). Os dados vão sendo atualizados pelo PAVAAH a partir de outras fontes e de visitas aos locais. </li>
+          </ul>
+          <h2>Contactos</h2>
+          <ul>
+            <li>Casa do Miradouro</li>
+            <li>Largo António José Pereira</li>
+            <li>Viseu 3500-080 Portugal</li>
+            <li> &nbsp;</li>
+            <li><span class="material-icons">mail_outline</span> casadomiradouro@cmviseu.pt</li>
+            <li><span class="material-icons">phone</span> 232 425 388</li>
+          </ul>
+          <h2>Licença</h2>
+          <ul>
+            <li class="aviso"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este trabalho está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons - Atribuição  4.0 Internacional</a>.
+              <br>O conteúdo original deste website é da autoria do Polo Arqueológico de Viseu António Almeida Henriques.
+              <br>Todos os textos, imagens e outros conteúdos não originais foram incluídas para fins educacionais e de divulgação, não estão sujeitas à licença Creative Commons acima identificada.
+              </li>
+          </ul>
+
+        </div>
+    </div>
+    <div class="modal_content_main_small hidemodal-desktop">
+        <div class="modal_content_100">
+        <h1>Anta da Lameira do Fojo 2</h1>
+          <p>Inserido numa necrópole mais ampla, que inclui construções funerárias de diferentes épocas e morfologias, a Anta da Lameira do Fojo 2 mantém muito bem preservada a mamoa, embora a sua arquitetura interior tenha sido destruída. A partir desta visita pode também aceder à visita virtual da Lameira do Fojo 1.</p>        
+        <ul class="lista-fix">
+        <li><span class="nome-creditos">CNS</span> 5086</li>
+        <li><span class="nome-creditos">Tipologia</span> Anta</li>
+        <li><span class="nome-creditos">Época</span> Neolítico</li>
+        <li><span class="nome-creditos">Protecção</span> </li>
+        <li><span class="nome-creditos">Bases de Dados</span> <a class="external-link" target="_blank" href="https://arqueologia.patrimoniocultural.pt/index.php?sid=sitios&subsid=51471">Endovélico</a></li>
+        <li><span class="nome-creditos">Descrição</span> Dólmen de corredor e câmara envolto por um tumulus, este último muito destruído. O tumulus é muito alto, com cerca de 3m, e com um diâmetro sensivelmente de 17,70m. Encontra-se a 100m do Lameira do Fojo 1.</li>
+        </ul>
+        <h2>Localização</h2>
+        <ul class="lista-fix">
+        <li><span class="nome-creditos">Freguesia</span> Coutos de Viseu</li>
+        <li><span class="nome-creditos">GPS</span> 40.697981, -7.979903</li>
+        <li><span class="nome-creditos">Acesso</span> EN 337-1 Viseu-Vouzela à direita em Couto de Cima. Depois da povoação da Lobagueira, (Av. Fontalinho), depois de 500m, à direita em caminho rural (355m). Ver no <a class="external-link" target="_blank" href="https://umap.openstreetmap.fr/en/map/megalitismo-em-viseu_546391#17/40.69743/-7.97978">Mapa</a>.</li>
+        </ul>
+        <h2>Trabalhos</h2>
+        <ul class="lista-fix">
+        <li><span class="nome-creditos">2020</span> Prospeção (EIA da Central solar fotovoltaica Lupina, Viseu) - Gabriel Rocha Pereira e António Jorge do Nascimento Arrais</li>
+        <li><span class="nome-creditos">1989</span> Manutenção, proteção, conservação e restauro (Trabalhos de valorização de sítios arqueológicos no concelho de Viseu) - Luís Filipe Coutinho Lopes Gomes e Pedro Manuel Sobral de Carvalho</li>
+        </ul>
+        <h2 >Referências</h2>
+        <ul class="lista-fix">
+        <li>PEDRO, Ivone dos Santos da Silva; VAZ, João Luis da Inês; ADOLFO, Jorge (1994) - <i><a  class="external-link" target="_blank" href="https://issuu.com/jorgeammarques2017/docs/jorge_adolfo_m._marques__roteiro_ar">Roteiro Arqueológico da Região de Turismo Dão Lafões</a></i>. Viseu: Região de Turismo Dão Lafões.</li>
+        </ul>
+        </div>
+        <div class="modal_content_100">
+        <h2>Ficha Técnica</h2>
+        <ul>
+        <li><h3>Projeto, Design e Implementação</h3></li>
+        <li>Polo Arqueológico de Viseu António Almeida Henriques</li>
+        </ul>
+        <ul>
+          <li class="aviso">Os conteúdos da ficha tem como ponto de partida a informação disponibilizada na base de dados Endovélico do Portal do Arqueólogo, um serviço da DGPC (Direção-Geral do Património Cultural). Os dados vão sendo atualizados pelo PAVAAH a partir de outras fontes e de visitas aos locais. </li>
+        </ul>
+        <h2>Contactos</h2>
+        <ul>
+          <li>Casa do Miradouro</li>
+          <li>Largo António José Pereira</li>
+          <li>Viseu 3500-080 Portugal</li>
+          <li> &nbsp;</li>
+          <li><span class="material-icons">mail_outline</span> casadomiradouro@cmviseu.pt</li>
+          <li><span class="material-icons">phone</span> 232 425 388</li>
+        </ul>
+        <h2>Licença</h2>
+        <ul>
+          <li class="aviso"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este trabalho está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons - Atribuição  4.0 Internacional</a>.
+            <br>O conteúdo original deste website é da autoria do Polo Arqueológico de Viseu António Almeida Henriques.
+            <br>Todos os textos, imagens e outros conteúdos não originais foram incluídas para fins educacionais e de divulgação, não estão sujeitas à licença Creative Commons acima identificada.
+            </li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+<script src="vendor/DeviceOrientationControlMethod.js"></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+<script src="js/jquery.modal.min.js"></script>
+<script src="js/simple-lightbox.min.js"></script>
+
+<script src="init.js"></script>
+
+
+<script>
+(function() {
+		var $gallery = new SimpleLightbox('.gallery a', {
+      nav: false,
+      captions: false,
+      showCounter: false,
+      animationSpeed: 100
+      });
+    	})();
+</script>
+
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#welcome-modal').modal();
+    });
+</script>
+
+</body>
+</html>
